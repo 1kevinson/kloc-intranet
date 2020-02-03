@@ -1,17 +1,22 @@
-var Encore = require('@symfony/webpack-encore');
+let Encore = require('@symfony/webpack-encore');
 
+//FIRST CONFIGURATION
 Encore
     .setOutputPath('public/build/')
     .setPublicPath('/build')
     .cleanupOutputBeforeBuild()
     .enableSourceMaps(!Encore.isProduction())
 
+    .copyFiles({
+        from: './assets/pictures',
+        to: 'images/[path][name].[ext]'
+    })
     .addEntry('js/app', [
-        './node_modules/jquery/dist/jquery.slim.js',
-        './node_modules/popper.js/dist/popper.min.js',
-        './node_modules/bootstrap/dist/js/bootstrap.min.js',
-        './node_modules/holderjs/holder.min.js',
-    ])
+    './node_modules/jquery/dist/jquery.slim.js',
+    './node_modules/popper.js/dist/popper.min.js',
+    './node_modules/bootstrap/dist/js/bootstrap.min.js',
+    './node_modules/holderjs/holder.min.js',
+])
     .addStyleEntry('css/app', [
         './node_modules/bootstrap/dist/css/bootstrap.min.css',
         './assets/css/base/animation.css',
@@ -19,8 +24,9 @@ Encore
         './assets/css/components/buttons.css',
         './assets/css/components/cards.css',
         './assets/css/layout/footer.css',
-        './assets/css/layout/header.css',
-        './node_modules/font-awesome/css/font-awesome.min.css'
+        './assets/css/layout/header.css'
     ]);
+
+
 
 module.exports = Encore.getWebpackConfig();

@@ -1,0 +1,25 @@
+
+/*Custom Colors outline buttons*/
+.btn-outline-kloc-indigo
+ {
+    color:  var(--kloc-indigo);
+    background-color: #ffffff;
+    border-color:  var(--kloc-indigo);
+    letter-spacing: 0.05em;
+}
+
+.btn-outline-kloc-indigo:hover,
+.btn-outline-kloc-indigo:active,
+.btn-outline-kloc-indigo:focus,
+.btn-outline-kloc-indigo.active {
+    background:  var(--kloc-indigo);
+    color: #ffffff;
+}
+
+.kloc-grey {
+    color: #eeeff0;
+}
+
+.kloc-blue {
+    color:  #4d83e6;
+}
