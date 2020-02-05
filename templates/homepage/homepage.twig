@@ -1,13 +1,25 @@
 {% extends 'base.html.twig' %}
 
+ {% block title %} Kloc - Home {% endblock %}
  {% block header %}  {% include('homepage/header.html.twig') %} {% endblock %}
 
  {% block body %}
+     <!-- Linear gradient  -->
+     <div class="col-md-12" id="image-home"
+          style="background-image:
+                  linear-gradient(to bottom, rgba(184,90,239,0.4), rgba(77,131,230,0.3)),
+                  url('{{ asset('build/images/house-in-crop.png') }}'); " >
 
-
-     <div class="container-fluid">
-         ...
      </div>
+     <div class="container-fluid" id="home-page">
+         <div class="col-md-6" id="slogan-home">
+            Slogan zone
+         </div>
+         <div class="col-md-6" id="twitter-home">
+            twitter zone
+         </div>
+     </div>
+
  {% endblock %}
 
  {% block footer %}  {% include('homepage/footer.html.twig') %} {% endblock %}

@@ -1,6 +1,5 @@
 let Encore = require('@symfony/webpack-encore');
 
-//FIRST CONFIGURATION
 Encore
     .setOutputPath('public/build/')
     .setPublicPath('/build')
@@ -24,7 +23,8 @@ Encore
         './assets/css/components/buttons.css',
         './assets/css/components/cards.css',
         './assets/css/layout/footer.css',
-        './assets/css/layout/header.css'
+        './assets/css/layout/header.css',
+        './assets/css/layout/image-home.css'
     ]);
 
 
