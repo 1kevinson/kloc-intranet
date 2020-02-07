@@ -57,7 +57,7 @@ html *
     font-size: 2em;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 992px) and (min-height:1100px ){
     .slogan-text{
         font-family: "black Raleway";
         margin-top: 35px;
