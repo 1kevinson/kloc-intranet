@@ -1,6 +1,6 @@
 /*Custom Colors outline buttons*/
 .btn-outline-kloc-indigo
- {
+{
     color:  var(--kloc-indigo);
     background-color: #ffffff;
     border-color:  var(--kloc-indigo);
@@ -15,10 +15,3 @@
     color: #ffffff;
 }
 
-.kloc-grey {
-    color: #eeeff0;
-}
-
-.kloc-blue {
-    color:  #4d83e6;
-}

@@ -53,15 +53,16 @@ html *
 
 .slogan-text{
     font-family: "black Raleway";
-    margin-top: 35px;
-    font-size: 2em;
+    margin-top: 40px;
+    font-size: calc(1vw + 1vh + 1.3vmin);
+    background: -webkit-linear-gradient(var(--kloc-indigo), var(--kloc-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-
-@media (min-width: 992px) and (min-height:1100px ){
+@media (max-width: 992px) {
     .slogan-text{
-        font-family: "black Raleway";
-        margin-top: 35px;
-        font-size: calc(40px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+        margin-top: 10px;
+        font-size: calc(2vw + 2vh + 1vmin);
     }
 }
 
@@ -72,8 +73,7 @@ html *
 }
 
 #home-page{
-    height: 50vh;
-    border: solid 1px black;
+    height: 47vh;
 }
 
 
