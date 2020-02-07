@@ -26,7 +26,7 @@ html *
 .slogan-text{
     font-family: "Anonymous Pro for Powerline";
     margin-top: 35px !important;
-    font-size: 180%;
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
     font-weight: bolder;
 }
 
