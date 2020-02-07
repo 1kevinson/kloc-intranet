@@ -61,7 +61,7 @@ html *
     .slogan-text{
         font-family: "black Raleway";
         margin-top: 35px;
-        font-size: 3.5em;
+        font-size: calc(40px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
     }
 }
 
