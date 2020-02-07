@@ -5,3 +5,13 @@
     -moz-background-size: cover;
     -o-background-size: cover;
 }
+
+
+/* To adapt image to all screen , we need to adjust image property dimensions Lxl */
+@media (min-width: 992px) {
+    #image-home {
+        height: 55vh;
+        background-size: cover;
+    }
+}
+

@@ -1,3 +1,31 @@
+/* MEDIA QUERIES */
+/*
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+@include media-breakpoint-up(sm) { ... }
+@include media-breakpoint-up(md) { ... }
+@include media-breakpoint-up(lg) { ... }
+@include media-breakpoint-up(xl) { ... }
+*/
+
+/* FONTS FACES */
+@font-face {
+    font-family: "black Raleway";
+    src: url("../../../Others/Raleway-Black.ttf");
+    font-weight: bold;
+}
+
 /* CSS global variable */
 :root{
 
@@ -24,10 +52,17 @@ html *
 }
 
 .slogan-text{
-    font-family: "Anonymous Pro for Powerline";
-    margin-top: 35px !important;
-    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-    font-weight: bolder;
+    font-family: "black Raleway";
+    margin-top: 35px;
+    font-size: 2em;
+}
+
+@media (min-width: 992px) {
+    .slogan-text{
+        font-family: "black Raleway";
+        margin-top: 35px;
+        font-size: 3.5em;
+    }
 }
 
 #twitter-home {
