@@ -15,6 +15,7 @@ Encore
     './node_modules/popper.js/dist/popper.min.js',
     './node_modules/bootstrap/dist/js/bootstrap.min.js',
     './node_modules/holderjs/holder.min.js',
+    './assets/js/app.js'
 ])
     .addStyleEntry('css/app', [
         './node_modules/bootstrap/dist/css/bootstrap.min.css',

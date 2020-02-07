@@ -1,7 +1,7 @@
-/*Custom Colors outline buttons*/
+/*Custom Colors outline button indigo*/
 .btn-outline-kloc-indigo
 {
-    color:  var(--kloc-indigo);
+    color:  var(--kloc-indigo) !important;
     background-color: #ffffff;
     border-color:  var(--kloc-indigo);
     letter-spacing: 0.05em;
@@ -12,6 +12,40 @@
 .btn-outline-kloc-indigo:focus,
 .btn-outline-kloc-indigo.active {
     background:  var(--kloc-indigo);
-    color: #ffffff;
+    color: #ffffff !important;
+}
+
+/*Custom Colors outline button blue*/
+.btn-outline-kloc-blue
+{
+    color:  var(--kloc-blue) !important;
+    background-color: #ffffff;
+    border-color:  var(--kloc-blue);
+    letter-spacing: 0.05em;
+}
+
+.btn-outline-kloc-blue:hover,
+.btn-outline-kloc-blue:active,
+.btn-outline-kloc-blue:focus,
+.btn-outline-kloc-blue.active {
+    background:  var(--kloc-blue);
+    color: #ffffff !important;
+}
+
+/*Custom Colors outline button grey*/
+.btn-outline-kloc-blue
+{
+    color:  var(--kloc-grey) !important;
+    background-color: #ffffff;
+    border-color:  var(--kloc-grey);
+    letter-spacing: 0.05em;
+}
+
+.btn-outline-kloc-grey:hover,
+.btn-outline-kloc-grey:active,
+.btn-outline-kloc-grey:focus,
+.btn-outline-kloc-grey.active {
+    background:  var(--kloc-grey);
+    color: #ffffff !important;
 }
 
