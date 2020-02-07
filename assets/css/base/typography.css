@@ -39,6 +39,11 @@ html * {
     --kloc-grey: #eeeff0
 }
 
+body{
+    min-height: 100vh;
+    position: relative;
+}
+
 #logo-name {
     font-size: 1.5rem;
 }
@@ -65,10 +70,21 @@ html * {
 }
 
 #twitter-home {
-    border: solid 1px black;
+    /*border: solid 1px black;*/
     height: 100%;
     float: right;
 }
+@media (max-width: 992px) {
+    #twitter-home {
+       border-bottom: solid 1px #5a6268;
+    }
+}
+@media (min-width: 992px) {
+    #twitter-home {
+        border: solid 1px #5a6268;
+    }
+}
+
 
 #home-page{
     height: 47vh;

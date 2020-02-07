@@ -3,3 +3,7 @@ Color code :
 violet : #d17df6
 bleu :  #4d83e6
 gris :  #eeeff0
+
+
+mbp13
+width: 1680  x length: 1050
