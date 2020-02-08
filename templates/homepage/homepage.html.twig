@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+ {% block title %} Kloc - Home {% endblock %}
+ {% block header %}  {% include('homepage/header.html.twig') %} {% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <style>
+        #image-home {
+            background-image:
+                    linear-gradient(to bottom, rgba(184,90,239,0.3), rgba(77,131,230,0.2)),
+                    url('{{ asset('build/images/house-in-crop.png') }}');
+            height: 50vh;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+     <!-- Linear gradient  -->
+     <div class="col-md-12" id="image-home">
+     </div>
+     <div id="home-page">
+         <div class="col-lg-6" id="slogan-home">
+             <p class="slogan-text">Gérez votre location en toute simplicité et transparence.</p>
+             <p class="slogan-text">Communiquez avec vos colocataires en temps réel</p>
+             <p class="slogan-text">Acces à vos factures et documents locatifs</p>
+         </div>
+         <div class="col-lg-6" id="twitter-home">
+             {# Custom Twitter widget #}
+             <a class="twitter-timeline" data-lang="fr" data-height = "45vh" data-theme="light" href="{{ hrefGenerated }}" data-chrome="transparent ">
+                 {{ labelGenerated }}</a>
+             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+         </div>
+     </div>
+{% endblock %}
+
+{% block footer %}  {% include('homepage/footer.html.twig') %} {% endblock %}

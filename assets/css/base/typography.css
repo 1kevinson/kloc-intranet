@@ -36,7 +36,8 @@ html * {
     font-size: 100%;
     --kloc-indigo: #b85aef;
     --kloc-blue: #4d83e6;
-    --kloc-grey: #eeeff0
+    --kloc-grey: #9e9ca3;
+    --kloc-grey-light : #f4f4f4;
 }
 
 body{
@@ -57,7 +58,7 @@ body{
 .slogan-text{
     font-family: "black Raleway";
     margin-top: 40px;
-    font-size: calc(1vw + 1vh + 1.3vmin);
+    font-size: calc(0.8vw + 0.8vh + 1.5vmin);
     background:  linear-gradient(to top, rgba(184, 90, 239,0.6), rgba(77, 131, 230,0.7));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -65,12 +66,11 @@ body{
 @media (max-width: 992px) {
     .slogan-text{
         margin-top: 10px;
-        font-size: calc(2vw + 2vh + 1vmin);
+        font-size: calc(1.9vw + 1.9vh + 0.8vmin);
     }
 }
 
 #twitter-home {
-    /*border: solid 1px black;*/
     height: 100%;
     float: right;
 }
@@ -79,15 +79,10 @@ body{
        border-bottom: solid 1px #5a6268;
     }
 }
-@media (min-width: 992px) {
-    #twitter-home {
-        border: solid 1px #5a6268;
-    }
-}
 
 
 #home-page{
-    height: 47vh;
+    height: 45vh;
     background-color: rgba(255, 255, 255, 0.58);
 }
 

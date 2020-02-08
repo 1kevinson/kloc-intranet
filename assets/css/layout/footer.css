@@ -1,7 +1,7 @@
 .footer{
     border-top: #4e555b thin;
     font-size: calc(0.4vw + 0.4vh + 0.2vmin);
-    background-color: var(--kloc-grey);
+    background-color: var(--kloc-grey-light);
 }
 
 @media (max-width: 992px) {

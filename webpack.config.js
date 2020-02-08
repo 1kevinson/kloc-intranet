@@ -25,7 +25,7 @@ Encore
         './assets/css/components/cards.css',
         './assets/css/layout/footer.css',
         './assets/css/layout/header.css',
-        './assets/css/layout/image-home.css'
+        './assets/css/layout/twitter-home.css'
     ]);
 
 

@@ -33,7 +33,7 @@
 }
 
 /*Custom Colors outline button grey*/
-.btn-outline-kloc-blue
+.btn-outline-kloc-grey
 {
     color:  var(--kloc-grey) !important;
     background-color: #ffffff;
