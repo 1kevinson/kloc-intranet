@@ -59,7 +59,7 @@ body{
     font-family: "black Raleway";
     margin-top: 40px;
     font-size: calc(0.8vw + 0.8vh + 1.5vmin);
-    background:  linear-gradient(to top, rgba(184, 90, 239,0.6), rgba(77, 131, 230,0.7));
+    background:  linear-gradient(to top, rgba(184, 90, 239, 0.81), rgba(77, 131, 230, 0.8));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -85,5 +85,29 @@ body{
     height: 45vh;
     background-color: rgba(255, 255, 255, 0.58);
 }
+
+
+#message-home {
+    height: 7vh;
+    z-index: -1;
+    color: white;
+    border: solid 2px white;
+    width: 100%;
+    font-size: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
