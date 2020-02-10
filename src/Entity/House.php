@@ -11,6 +11,8 @@ use Doctrine\ORM\Mapping as ORM;
 class House
 {
     #region constantes
+    const RENTAL_AVAILABLE      = 'RENTAL_AVAILABLE';
+    const RENTAL_UNAVAILABLE    = 'RENTAL_UNAVAILABLE';
     #endregion
 
     #region properties
@@ -27,15 +29,32 @@ class House
     private $location;
 
     /**
+     * @ORM\Column(type="string")
+     */
+    private $rental_status;
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Users\Tenant", mappedBy="house")
      */
     private $tenant;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Users\Owner", inversedBy="house")
+     */
+    private $owner;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Room", mappedBy="house")
+     */
+    private $room;
     #endregion
 
     #region constructor
     public function __construct()
     {
-        $this->tenant = new ArrayCollection();
+        $this->rental_status    = self::RENTAL_AVAILABLE;
+        $this->tenant           = new ArrayCollection();
+        $this->room             = new ArrayCollection();
     }
     #endregion
 
@@ -78,6 +97,30 @@ class House
     public function getTenant(): ArrayCollection
     {
         return $this->tenant;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOwner()
+    {
+        return $this->owner;
+    }
+
+    /**
+     * @param mixed $owner
+     */
+    public function setOwner($owner): void
+    {
+        $this->owner = $owner;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getRoom(): ArrayCollection
+    {
+        return $this->room;
     }
     #endregion
 

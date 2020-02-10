@@ -6,6 +6,11 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
+/*
+ * DISCRIMINATOR IS USE To dissociate User to Owner and Admin
+ *
+ * */
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @ORM\InheritanceType("SINGLE_TABLE")
@@ -18,6 +23,9 @@ abstract class User implements UserInterface, \Serializable
     const ROLE_ADMIN = 'ROLE_ADMIN';
     const ROLE_USER = 'ROLE_USER';
     const ROLE_OWNER = 'ROLE_OWNER';
+
+    /* PATH for dev due to Webpack Encore */
+    const PROFILE_PICTURE_PATH = __DIR__."/public/build/images/";
     #endregion
 
     #region properties
@@ -58,6 +66,11 @@ abstract class User implements UserInterface, \Serializable
      * @Assert\Length(min=4,max=50, minMessage="The min length is not respected")
      */
     private $fullName;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $profilePictureFile;
 
     /**
      * @var array
@@ -211,6 +224,38 @@ abstract class User implements UserInterface, \Serializable
     {
         $this->enabled = $enabled;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getLogin()
+    {
+        return $this->login;
+    }
+
+    /**
+     * @param mixed $login
+     */
+    public function setLogin($login): void
+    {
+        $this->login = $login;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProfilePictureFile()
+    {
+        return $this->profilePictureFile;
+    }
+
+    /**
+     * @param mixed $profilePictureFile
+     */
+    public function setProfilePictureFile($profilePictureFile): void
+    {
+        $this->profilePictureFile = $profilePictureFile;
+    }
     #endregion
 
     #region methods
@@ -229,20 +274,6 @@ abstract class User implements UserInterface, \Serializable
         list($this->id,$this->login,$this->password,$this->enabled) = $this->unserialize($serialized);
     }
 
-    public function isAccountNonExpired()
-    {
-       return true;
-    }
-
-    public function isAccountNonLocked()
-    {
-        return true;
-    }
-
-    public function isCredentialsNonExpired()
-    {
-        return true;
-    }
 
     public function getSalt()
     {
@@ -257,6 +288,11 @@ abstract class User implements UserInterface, \Serializable
     public function eraseCredentials()
     {
         // TODO: Implement eraseCredentials() method.
+    }
+
+    public function getProfilePicturePath()
+    {
+        return self::PROFILE_PICTURE_PATH;
     }
     #endregion
 
