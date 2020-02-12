@@ -17,11 +17,14 @@ class Tenant extends User
     #endregion
 
     #region properties
+    /**
+     * @ORM\Column(type="string")
+     */
     private $account_status;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\House", inversedBy="tenant")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $house;
 
@@ -52,7 +55,7 @@ class Tenant extends User
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\Contract", inversedBy="tenant")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $contract;
     #endregion

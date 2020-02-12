@@ -42,7 +42,7 @@ class HomeController extends AbstractController
 
 
     /**
-     * @Route("/connexion", name="login_page")
+     * @Route("/login", name="login_page")
      */
     public function connection(){
 
