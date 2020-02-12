@@ -1,13 +1,15 @@
 security:
     access_decision_manager:
-            strategy: affirmative  #Strategy defined for voter, use to granted User access for certains actions
+        strategy: affirmative  #Strategy defined for voter, use to granted User access for certains actions
 
     encoders:
         App\Entity\Users\User: bcrypt
 
     providers:
-        database_users: #name give to provider
-            entity: { class: App\Entity\Users\User, property: login }
+        users: #name give to provider
+            entity:
+                class: 'App\Entity\Users\User'
+                property: 'username'
 
     firewalls:
         dev:
@@ -17,14 +19,16 @@ security:
             anonymous: true
             pattern: ^/
 
+
             form_login:
                 check_path: security_login
                 login_path: security_login
                 csrf_token_generator: security.csrf.token_manager
-                default_target_path: connexion
+                default_target_path: home_page
+
             logout:
                 path: security_logout
-                target: connexion
+                target: home_page
 
         # activate different ways to authenticate
         # https://symfony.com/doc/current/security.html#firewalls-authentication

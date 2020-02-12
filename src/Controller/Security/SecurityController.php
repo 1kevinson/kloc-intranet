@@ -25,7 +25,7 @@ class SecurityController extends AbstractController
 
     #region methods
     /**
-     * @Route("/login", name="app_login")
+     * @Route("/login", name="security_login")
      * @param AuthenticationUtils $authenticationUtils
      * @return
      */
@@ -40,6 +40,16 @@ class SecurityController extends AbstractController
             'last_username' => $lastUsername,
             'error' => $error
         ]);
+    }
+
+
+    /**
+     * @Route("/logout", name="security_logout")
+     *
+     */
+    public function logout()
+    {
+
     }
     #endregion
 

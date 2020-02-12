@@ -3,6 +3,7 @@
 namespace App\Entity\Users;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -13,6 +14,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(fields="email", message="This e-mail is already in use")
+ * @UniqueEntity(fields="username", message="This username is already in use")
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="type", type="string")
  * @ORM\DiscriminatorMap({"tenant" = "Tenant", "owner" = "Owner", "admin" = "Admin"})
@@ -41,7 +44,7 @@ abstract class User implements UserInterface, \Serializable
      * @Assert\NotBlank()
      * @Assert\Length(min=4,max=50)
      */
-    private $login;
+    private $username;
 
     /**
      * @ORM\Column(type="string")
@@ -228,17 +231,17 @@ abstract class User implements UserInterface, \Serializable
     /**
      * @return mixed
      */
-    public function getLogin()
+    public function getUsername()
     {
-        return $this->login;
+        return $this->username;
     }
 
     /**
-     * @param mixed $login
+     * @param mixed $username
      */
-    public function setLogin($login): void
+    public function setUsername($username): void
     {
-        $this->login = $login;
+        $this->username = $username;
     }
 
     /**
@@ -263,7 +266,7 @@ abstract class User implements UserInterface, \Serializable
     {
         return serialize([
             $this->id,
-            $this->login,
+            $this->username,
             $this->password,
             $this->enabled
         ]);
@@ -271,7 +274,12 @@ abstract class User implements UserInterface, \Serializable
 
     public function unserialize($serialized)
     {
-        list($this->id,$this->login,$this->password,$this->enabled) = $this->unserialize($serialized);
+        list(
+            $this->id,
+            $this->username,
+            $this->password,
+            $this->enabled
+            ) = unserialize($serialized, array('allowed_classes' => false));
     }
 
 
@@ -280,10 +288,6 @@ abstract class User implements UserInterface, \Serializable
         return null;
     }
 
-    public function getUsername()
-    {
-       return $this->getFullName();
-    }
 
     public function eraseCredentials()
     {
