@@ -90,7 +90,6 @@ class UserFixtures extends Fixture
 
     public function loadTenant(ObjectManager $manager)
     {
-
         foreach ( self::TENANTS as $tenantData)
         {
             $tenant = new Tenant();
@@ -108,7 +107,6 @@ class UserFixtures extends Fixture
 
     public function loadOwner(ObjectManager $manager)
     {
-
         foreach ( self::OWNERS as $ownerData)
         {
             $owner = new Owner();
@@ -126,7 +124,6 @@ class UserFixtures extends Fixture
 
     public function loadAdmin(ObjectManager $manager)
     {
-
         foreach ( self::ADMIN as $adminData)
         {
             $admin = new Admin();

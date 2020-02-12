@@ -1,12 +1,9 @@
 <?php
 
-
 namespace App\Controller\homepage;
-
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-
 
 class HomeController extends AbstractController
 {
@@ -33,19 +30,10 @@ class HomeController extends AbstractController
 
         $dayOfWeek = rand(0,4);
 
-
         return $this->render('homepage/homepage.html.twig',[
             'hrefGenerated' => $arrayTwitterHref[$dayOfWeek],
             'labelGenerated' => $arrayTwitterLabel[$dayOfWeek]
         ]);
     }
 
-
-    /**
-     * @Route("/login", name="login_page")
-     */
-    public function connection(){
-
-        return $this->render('Authentication/login.html.twig');
-    }
 }

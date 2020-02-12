@@ -1,7 +1,40 @@
 {% extends 'homepage/homepage.html.twig' %}
 
-{% block body %}
-    <div class="row" id="login-zone-canva">
+{% block title %}Login{% endblock %}
 
+{% block body %}
+    <div class="row justify-content-center" id="login-space">
+        <div id="login-box" class="col-4 center-div-vertically">
+
+            <form method="post">
+            <div class="card">
+                <div class="card-header">
+                    Entrez vos identifiants de connexion
+                </div>
+                <div class="card-body">
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Identifiant</span>
+                        </div>
+                        <input type="text" value="{{ last_username }}" class="form-control" aria-label="Login">
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Mot de passe</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Password" >
+                    </div>
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                    <button class="btn btn-outline-kloc-indigo" type="submit"> Se Connecter </button>
+                </div>
+            </div>
+            </form>
+
+        </div>
     </div>
 {% endblock %}
