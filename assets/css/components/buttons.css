@@ -49,3 +49,20 @@
     color: #ffffff !important;
 }
 
+/* CUSTOM HEADER FULLNAME USER */
+.btn-outline-kloc-header-user
+{
+    border-radius: 10px;
+    color:  #ffffff ;
+    background-color: var(--kloc-indigo);
+    border-color:var(--kloc-indigo);
+    letter-spacing: 0.05em;
+}
+
+.btn-outline-kloc-header-user:hover,
+.btn-outline-kloc-header-user:active,
+.btn-outline-kloc-header-user:focus,
+.btn-outline-kloc-header-user.active {
+    background:  #ffffff !important;
+    color: var(--kloc-indigo) !important;
+}

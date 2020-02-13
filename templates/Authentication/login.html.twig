@@ -1,9 +1,9 @@
 {% extends 'homepage/homepage.html.twig' %}
 
-{% block title %}Login{% endblock %}
+{% block title %} Connexion {% endblock %}
 
 {% block body %}
-    <div class="row justify-content-center" id="login-space">
+    <div class="row justify-content-center viewport-height" >
         <div id="login-box" class="col-4 center-div-vertically">
 
             <form action="{{ path('security_login') }}" method="post">

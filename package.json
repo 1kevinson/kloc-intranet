@@ -5,6 +5,7 @@
     "sass-loader": "^7.0.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
     "bootstrap": "4.0.0",
     "font-awesome": "^4.7.0",
     "holderjs": "^2.9.6",

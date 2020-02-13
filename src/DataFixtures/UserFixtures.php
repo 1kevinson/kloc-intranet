@@ -93,7 +93,7 @@ class UserFixtures extends Fixture
         foreach ( self::TENANTS as $tenantData)
         {
             $tenant = new Tenant();
-            $tenant->setLogin($tenantData['login']);
+            $tenant->setUsername($tenantData['login']);
             $tenant->setFullName($tenantData['fullName']);
             $tenant->setEmail($tenantData['email']);
             $tenant->setPassword($this->passwordEncoder->encodePassword($tenant,$tenantData['password']));
@@ -110,7 +110,7 @@ class UserFixtures extends Fixture
         foreach ( self::OWNERS as $ownerData)
         {
             $owner = new Owner();
-            $owner->setLogin($ownerData['login']);
+            $owner->setUsername($ownerData['login']);
             $owner->setFullName($ownerData['fullName']);
             $owner->setEmail($ownerData['email']);
             $owner->setPassword($this->passwordEncoder->encodePassword($owner,$ownerData['password']));
@@ -127,7 +127,7 @@ class UserFixtures extends Fixture
         foreach ( self::ADMIN as $adminData)
         {
             $admin = new Admin();
-            $admin->setLogin($adminData['login']);
+            $admin->setUsername($adminData['login']);
             $admin->setFullName($adminData['fullName']);
             $admin->setEmail($adminData['email']);
             $admin->setPassword($this->passwordEncoder->encodePassword($admin,$adminData['password']));
