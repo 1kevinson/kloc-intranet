@@ -41,6 +41,10 @@ class ContractFixtures extends Fixture
                $this->getReference($tenants[rand(0,count($tenants))]->getUsername())
            );
 
+           /*
+            * Reference to "luc_page" does not exist --- ERROR
+            * */
+
         }
 
         $manager->flush();
