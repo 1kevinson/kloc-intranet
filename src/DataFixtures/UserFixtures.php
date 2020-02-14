@@ -90,7 +90,7 @@ class UserFixtures extends Fixture
 
     public function loadTenant(ObjectManager $manager)
     {
-        foreach ( self::TENANTS as $tenantData)
+        foreach (self::TENANTS as $tenantData)
         {
             $tenant = new Tenant();
             $tenant->setUsername($tenantData['login']);
@@ -98,6 +98,8 @@ class UserFixtures extends Fixture
             $tenant->setEmail($tenantData['email']);
             $tenant->setPassword($this->passwordEncoder->encodePassword($tenant,$tenantData['password']));
             $tenant->setEnabled(true);
+
+            $this->setReference($tenantData['login'],$tenant);
 
             $manager->persist($tenant);
         }
@@ -115,6 +117,8 @@ class UserFixtures extends Fixture
             $owner->setEmail($ownerData['email']);
             $owner->setPassword($this->passwordEncoder->encodePassword($owner,$ownerData['password']));
             $owner->setEnabled(true);
+
+            $this->setReference($ownerData['login'],$owner);
 
             $manager->persist($owner);
         }

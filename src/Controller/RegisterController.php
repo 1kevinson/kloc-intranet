@@ -14,19 +14,23 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
+
+/**
+ * @Route("/register")
+ */
 class RegisterController extends AbstractController
 {
     public function __construct() { }
 
     /**
-     * @Route("/register-views", name="register_views")
+     * @Route("/choice", name="register_choice")
      */
     public function registerViews(){
         return $this->render('Authentication/register-views.html.twig');
     }
 
     /**
-     * @Route("/register-tenant", name="tenant_register")
+     * @Route("/tenant", name="tenant_register")
      */
     public function registerTenant(UserPasswordEncoderInterface $passwordEncoder,
                              Request $request,
@@ -56,7 +60,7 @@ class RegisterController extends AbstractController
     }
 
     /**
-     * @Route("/register-owner", name="owner_register")
+     * @Route("/owner", name="owner_register")
      */
     public function registerOwner(UserPasswordEncoderInterface $passwordEncoder,
                                      Request $request,
