@@ -17,58 +17,58 @@ class UserFixtures extends Fixture
 
     private const TENANTS = [
         [
-            'login'  => 'john_doe',
-            'email'     => 'john_doe@doe.com',
-            'password'  => 'john123',
-            'fullName'  => 'John Doe',
+            'login' => 'john_doe',
+            'email' => 'john_doe@doe.com',
+            'password' => 'john123',
+            'fullName' => 'John Doe',
             'profile_picture' => 'profile.jpeg'
         ],
         [
-            'login'  => 'luc_page',
-            'email'     => 'luc_page@page.com',
-            'password'  => 'page123',
-            'fullName'  => 'Luc Page',
+            'login' => 'luc_page',
+            'email' => 'luc_page@page.com',
+            'password' => 'page123',
+            'fullName' => 'Luc Page',
             'profile_picture' => 'profile.jpeg'
         ],
         [
-            'login'  => 'marry_gold',
-            'email'     => 'marry_gold@marry.com',
-            'password'  => 'marry123',
-            'fullName'  => 'Marry Gold',
+            'login' => 'marry_gold',
+            'email' => 'marry_gold@marry.com',
+            'password' => 'marry123',
+            'fullName' => 'Marry Gold',
             'profile_picture' => 'profile.jpeg'
         ],
         [
-            'login'  => 'arsene_kevin',
-            'email'     => 'arsene_kevin@kevin.com',
-            'password'  => 'arsene123',
-            'fullName'  => 'Arsene Kevin',
+            'login' => 'arsene_kevin',
+            'email' => 'arsene_kevin@kevin.com',
+            'password' => 'arsene123',
+            'fullName' => 'Arsene Kevin',
             'profile_picture' => 'profile.jpeg'
         ]
     ];
 
     private const OWNERS = [
         [
-            'login'  => 'mathias_huss',
-            'email'     => 'mathias_huss@mathias.com',
-            'password'  => 'mathias123',
-            'fullName'  => 'Mathias Huss',
+            'login' => 'mathias_huss',
+            'email' => 'mathias_huss@mathias.com',
+            'password' => 'mathias123',
+            'fullName' => 'Mathias Huss',
             'profile_picture' => 'profile.jpeg'
         ],
         [
-            'login'  => 'tony_lehmann',
-            'email'     => 'tony_lehmann@tony.com',
-            'password'  => 'tony123',
-            'fullName'  => 'Tony Lehmann',
+            'login' => 'tony_lehmann',
+            'email' => 'tony_lehmann@tony.com',
+            'password' => 'tony123',
+            'fullName' => 'Tony Lehmann',
             'profile_picture' => 'profile.jpeg'
         ]
     ];
 
     private const ADMIN = [
         [
-            'login'  => 'sir_kevinson',
-            'email'     => 'sir_kevinson@admin.com',
-            'password'  => 'admin123',
-            'fullName'  => 'Sir Kevinson',
+            'login' => 'sir_kevinson',
+            'email' => 'sir_kevinson@admin.com',
+            'password' => 'admin123',
+            'fullName' => 'Sir Kevinson',
             'profile_picture' => 'profile.jpeg'
         ]
     ];
@@ -90,16 +90,15 @@ class UserFixtures extends Fixture
 
     public function loadTenant(ObjectManager $manager)
     {
-        foreach (self::TENANTS as $tenantData)
-        {
+        foreach ( self::TENANTS as $tenantData ) {
             $tenant = new Tenant();
             $tenant->setUsername($tenantData['login']);
             $tenant->setFullName($tenantData['fullName']);
             $tenant->setEmail($tenantData['email']);
-            $tenant->setPassword($this->passwordEncoder->encodePassword($tenant,$tenantData['password']));
+            $tenant->setPassword($this->passwordEncoder->encodePassword($tenant, $tenantData['password']));
             $tenant->setEnabled(true);
 
-            $this->setReference($tenantData['login'],$tenant);
+            $this->setReference($tenantData['login'], $tenant);
 
             $manager->persist($tenant);
         }
@@ -109,16 +108,15 @@ class UserFixtures extends Fixture
 
     public function loadOwner(ObjectManager $manager)
     {
-        foreach ( self::OWNERS as $ownerData)
-        {
+        foreach ( self::OWNERS as $ownerData ) {
             $owner = new Owner();
             $owner->setUsername($ownerData['login']);
             $owner->setFullName($ownerData['fullName']);
             $owner->setEmail($ownerData['email']);
-            $owner->setPassword($this->passwordEncoder->encodePassword($owner,$ownerData['password']));
+            $owner->setPassword($this->passwordEncoder->encodePassword($owner, $ownerData['password']));
             $owner->setEnabled(true);
 
-            $this->setReference($ownerData['login'],$owner);
+            $this->setReference($ownerData['login'], $owner);
 
             $manager->persist($owner);
         }
@@ -128,13 +126,12 @@ class UserFixtures extends Fixture
 
     public function loadAdmin(ObjectManager $manager)
     {
-        foreach ( self::ADMIN as $adminData)
-        {
+        foreach ( self::ADMIN as $adminData ) {
             $admin = new Admin();
             $admin->setUsername($adminData['login']);
             $admin->setFullName($adminData['fullName']);
             $admin->setEmail($adminData['email']);
-            $admin->setPassword($this->passwordEncoder->encodePassword($admin,$adminData['password']));
+            $admin->setPassword($this->passwordEncoder->encodePassword($admin, $adminData['password']));
             $admin->setEnabled(true);
 
             $manager->persist($admin);
