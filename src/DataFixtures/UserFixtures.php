@@ -99,8 +99,6 @@ class UserFixtures extends Fixture
             $tenant->setPassword($this->passwordEncoder->encodePassword($tenant,$tenantData['password']));
             $tenant->setEnabled(true);
 
-            $this->setReference($tenantData['login'],$tenant);
-
             $manager->persist($tenant);
         }
 
@@ -117,8 +115,6 @@ class UserFixtures extends Fixture
             $owner->setEmail($ownerData['email']);
             $owner->setPassword($this->passwordEncoder->encodePassword($owner,$ownerData['password']));
             $owner->setEnabled(true);
-
-            $this->setReference($ownerData['login'],$owner);
 
             $manager->persist($owner);
         }

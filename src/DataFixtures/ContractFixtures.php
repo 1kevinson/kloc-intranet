@@ -8,16 +8,11 @@ use App\Entity\Contract;
 use App\Entity\Users\Tenant;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Faker\Factory;
 
 
 class ContractFixtures extends Fixture
 {
-
-    private const CONTRACTS =  [
-            'reference'     => 'KLOC-INTRA-N',
-            'author'  => 'FRIDAY-14'
-        ];
-
 
     public function load(ObjectManager $manager)
     {
@@ -28,27 +23,28 @@ class ContractFixtures extends Fixture
 
     public function loadContract(ObjectManager $manager)
     {
+        $fakeDatas = Factory::create();
 
-        $tenants = $manager->getRepository(Tenant::class)->findAll();
 
-//        dump(self::CONTRACTS);die;
-
-        for($i =0; $i < 50 ; $i++)
+        for($i =0; $i < 30 ; $i++)
         {
            $contract = new Contract();
-           $contract->setReference(self::CONTRACTS['reference'].'_'.$i);
-           $contract->setTenant(
-               $this->getReference($tenants[rand(0,count($tenants))]->getUsername())
-           );
 
-           /*
-            * Reference to "luc_page" does not exist --- ERROR
-            * */
-
+           $contract->setReference($fakeDatas->swiftBicNumber);
+           $contract->setDateStart(new \DateTime());
+           $contract->setDateEnd(new \DateTime($fakeDatas->dateTimeBetween('now','+1 year')->format('Y-m-d')));
+           $contract->setAuthor('KevinFixtures');
+           $manager->persist($contract);
         }
 
         $manager->flush();
     }
 
+    public function getDependencies()
+    {
+        return array(
+            UserFixtures::class,
+        );
+    }
 
 }
