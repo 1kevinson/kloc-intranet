@@ -7,6 +7,10 @@
 }
 
 
+#register-views {
+    background-color: #f8f9fa;
+}
+
 /* Tenant Zone */
 #tenant-register {
     border: solid 1px #c0c0c0;
@@ -19,16 +23,22 @@
     color: white;
     padding-left: 4%;
 
-    transition: all 0.7s cubic-bezier(0.165, 0.84, 0.45, 1.2);
+    /* Mouse out */
+    transition: background 2s ease-out, box-shadow 1s, transform 1s;
 }
 
 
 #tenant-register:hover
 {
+    background:  linear-gradient(to top, rgba(177, 67, 221, 0.91), rgba(77, 131, 230, 0.8));
     transform: scale(1, 1.02);
     box-shadow: -5px 10px 19px -3px rgba(97,97,97,0.77);
     text-decoration: none;
+
+    /* Mouse in */
+    transition: all 0.9s cubic-bezier(0.165, 0.84, 0.45, 1.2);
 }
+
 
 /* Owner Zone */
 #owner-register {
@@ -42,13 +52,18 @@
     color: white;
     padding-left: 4%;
 
-    transition: all 0.7s cubic-bezier(0.165, 0.84, 0.45, 1.1);
+    /* Mouse out */
+    transition: background 2s ease-out, box-shadow 1s, transform 1s;
 }
 
 #owner-register:hover {
+    background:  linear-gradient(to top, rgba(55, 65, 229, 0.8),rgba(184, 90, 239, 0.81));
     transform: scale(1, 1.02);
     box-shadow: 3px 10px 19px -3px rgba(97,97,97,0.77);
     text-decoration: none;
+
+    /* Mouse in */
+    transition: all 0.9s cubic-bezier(0.165, 0.84, 0.45, 1.2);
 }
 
 
