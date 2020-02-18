@@ -154,6 +154,24 @@ class Tenant extends User
         return $this->contract;
     }
 
+    /**
+     * @param ArrayCollection $request
+     */
+    public function setRequest(ArrayCollection $request): void
+    {
+        $this->request = $request;
+    }
+
+    /**
+     * @param mixed $contract
+     */
+    public function setContract($contract): void
+    {
+        $this->contract = $contract;
+    }
+
+
+
     #endregion
 
     #region methods

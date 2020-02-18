@@ -52,7 +52,7 @@
 /* CUSTOM HEADER FULLNAME USER */
 .btn-outline-kloc-header-user
 {
-    border-radius: 10px;
+    border-radius: 5px;
     color:  #ffffff ;
     background-color: var(--kloc-indigo);
     border-color:var(--kloc-indigo);

@@ -5,7 +5,6 @@ namespace App\DataFixtures;
 
 
 use App\Entity\Contract;
-use App\Entity\Users\Tenant;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
@@ -18,13 +17,11 @@ class ContractFixtures extends Fixture
     {
         // TODO: Implement load() method.
         $this->loadContract($manager);
-
     }
 
     public function loadContract(ObjectManager $manager)
     {
         $fakeDatas = Factory::create();
-
 
         for($i =0; $i < 30 ; $i++)
         {
@@ -34,17 +31,12 @@ class ContractFixtures extends Fixture
            $contract->setDateStart(new \DateTime());
            $contract->setDateEnd(new \DateTime($fakeDatas->dateTimeBetween('now','+1 year')->format('Y-m-d')));
            $contract->setAuthor('KevinFixtures');
+
            $manager->persist($contract);
         }
 
         $manager->flush();
     }
 
-    public function getDependencies()
-    {
-        return array(
-            UserFixtures::class,
-        );
-    }
 
 }

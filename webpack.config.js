@@ -15,9 +15,11 @@ Encore
     './node_modules/popper.js/dist/popper.min.js',
     './node_modules/bootstrap/dist/js/bootstrap.min.js',
     './node_modules/holderjs/holder.min.js',
-    './assets/js/app.js'
-])
+    './assets/js/app.js',
+    './assets/js/custom-bootstrap.js'
+    ])
     .addStyleEntry('css/app', [
+        './node_modules/@fortawesome/fontawesome-free/css/all.css',
         './node_modules/bootstrap/dist/css/bootstrap.min.css',
         './assets/css/base/animation.css',
         './assets/css/base/typography.css',

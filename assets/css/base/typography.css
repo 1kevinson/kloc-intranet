@@ -31,6 +31,13 @@
 
 }
 
+.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+}
+
 html * {
     font-family: "PT Sans Narrow" ;
     font-size: 100%;
