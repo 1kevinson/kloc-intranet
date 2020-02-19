@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 
@@ -34,19 +35,35 @@ class TenantType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
        $builder
-           ->add('fullName',TextType::class)
-           ->add('username',TextType::class)
-           ->add('email',TextType::class)
+           ->add('fullName',TextType::class,[
+             'label' => 'Nom Complet'
+           ])
+           ->add('username',TextType::class,[
+               'label' => 'Nom d\'utilisateur '
+           ])
+           ->add('email',TextType::class,[
+               'label' => 'Adresse email'
+           ])
            ->add('plainPassword', RepeatedType::class, [
                'type' => PasswordType::class,
-               'first_options' => ['label' => 'Password'],
-               'second_options' => ['label' => 'Repeated Password']
+               'first_options' => ['label' => 'Mot de passe'],
+               'second_options' => ['label' => 'Confirmer mot de passe']
            ])
-           ->add('profilePictureFile',FileType::class)
+           ->add('profilePictureFile',FileType::class, [
+               'label' => 'Votre Photo',
+               'attr' => array(
+                   'placeholder' => 'Chargez une image',
+               ),
+               'required' => false,
+               'empty_data' => 'NO_PICTURE'
+           ])
            ->add('termsAgreed', CheckboxType::class, [
                'mapped' => false,
                'constraints' => new IsTrue(),
-               'label' => 'I agree to the terms of service'
+               'label' => 'J\'accepte les conditions d\'utilisation du site',
+               'label_attr' => array(
+                   'class' => 'ml-1'
+               )
            ])
            ->add('Register', SubmitType::class);
 

@@ -10,6 +10,10 @@ Encore
         from: './assets/pictures',
         to: 'images/[path][name].[ext]'
     })
+    .copyFiles({
+        from: './assets/profiles',
+        to: 'profiles/[path][name].[ext]'
+    })
     .addEntry('js/app', [
     './node_modules/jquery/dist/jquery.slim.js',
     './node_modules/popper.js/dist/popper.min.js',

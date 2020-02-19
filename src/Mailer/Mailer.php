@@ -28,7 +28,7 @@ class Mailer
         ]);
 
         $message = (new \Swift_Message())
-            ->setSubject('Bienvenue sur Kloc - Intranet !')
+            ->setSubject('Bienvenue sur Kloc-Intranet !')
             ->setFrom($this->mailFrom)
             ->setTo($user->getEmail())
             ->setBody($body,'text/html');

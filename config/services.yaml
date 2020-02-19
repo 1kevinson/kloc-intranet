@@ -5,6 +5,7 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     email_from: '%env(MAILER_FROM)%'
+
 services:
     # Session Handling
     Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler:
