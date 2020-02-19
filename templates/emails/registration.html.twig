@@ -1,0 +1,13 @@
+{% extends 'emails/base.html.twig' %}
+
+{% block body %}
+    <h3> Bienvenue !</h3>
+
+    <p>Bonjour {{ user.fullName }}, vous avez été enregistrer dans l'application.</p>
+
+    <p>Veuillez confirmer votre compte avec ce <a href="{{ url('security_confirm',{'token': token}) }}">lien</a></p>
+
+    <p>Pour vous connecter, allez à la <a href="{{ url('security_login') }}"> Page de connexion </a></p>
+
+    <hr>
+{% endblock %}

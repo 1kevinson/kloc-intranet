@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ app.request.getSchemeAndHttpHost ~ asset('build/css/app.css') }}">
+    {% endblock %}
+</head>
+<body>
+
+{% block head %}
+    <img src="{{ app.request.getSchemeAndHttpHost ~ asset('build/images/logo.png')}}" width="35" height="35" alt="">
+    <a class="" href="{{ url('home_page') }}">
+        <span id="logo-name" class="ml-2">Kloc-Intranet</span>
+    </a>
+{% endblock %}
+
+{% block body %}{% endblock %}
+
+{% block regards %}
+    <p> Bien Cordialement </p>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('build/js/app.js') }}"></script>
+{% endblock %}
+
+</body>
+</html>

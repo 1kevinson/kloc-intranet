@@ -6,10 +6,12 @@ namespace App\Controller;
 
 use App\Entity\Users\Owner;
 use App\Entity\Users\Tenant;
+use App\Event\UserRegisterEvent;
 use App\Form\OwnerType;
 use App\Form\TenantType;
 use App\Security\TokenGenerator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -26,16 +28,27 @@ class RegisterController extends AbstractController
      * @Route("/choice", name="register_choice")
      */
     public function registerViews(){
+
+        if($this->getUser() != null){
+            return $this->redirectToRoute('home_page');
+        }
+
         return $this->render('Authentication/register-views.html.twig');
     }
+
 
     /**
      * @Route("/tenant", name="tenant_register")
      */
     public function registerTenant(UserPasswordEncoderInterface $passwordEncoder,
-                             Request $request,
-                             TokenGenerator $tokenGenerator)
+                                   Request $request,
+                                   TokenGenerator $tokenGenerator,
+                                   EventDispatcherInterface $eventDispatcher)
     {
+        if($this->getUser() != null){
+            return $this->redirectToRoute('home_page');
+        }
+
         $tenant = new Tenant();
 
         $form = $this->createForm(TenantType::class, $tenant);
@@ -51,6 +64,9 @@ class RegisterController extends AbstractController
             $entityManager->persist($tenant);
             $entityManager->flush();
 
+            $userRegisterEvent = new UserRegisterEvent($tenant);
+            $eventDispatcher->dispatch($userRegisterEvent,UserRegisterEvent::NAME);
+
             return $this->redirectToRoute('security_login');
         }
 
@@ -59,6 +75,7 @@ class RegisterController extends AbstractController
         ]);
     }
 
+
     /**
      * @Route("/owner", name="owner_register")
      */
@@ -66,6 +83,10 @@ class RegisterController extends AbstractController
                                      Request $request,
                                      TokenGenerator $tokenGenerator)
     {
+        if($this->getUser() != null){
+            return $this->redirectToRoute('home_page');
+        }
+
         $owner = new Owner();
 
         $form = $this->createForm(OwnerType::class, $owner);

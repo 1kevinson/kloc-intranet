@@ -4,6 +4,7 @@ namespace App\Entity\Users;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -20,7 +21,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\DiscriminatorColumn(name="type", type="string")
  * @ORM\DiscriminatorMap({"tenant" = "Tenant", "owner" = "Owner", "admin" = "Admin"})
  */
-abstract class User implements UserInterface, \Serializable
+abstract class User implements AdvancedUserInterface, \Serializable
 {
     #region constantes
     const ROLE_ADMIN = 'ROLE_ADMIN';
@@ -213,14 +214,6 @@ abstract class User implements UserInterface, \Serializable
     }
 
     /**
-     * @return bool
-     */
-    public function isEnabled(): bool
-    {
-        return $this->enabled;
-    }
-
-    /**
      * @param bool $enabled
      */
     public function setEnabled(bool $enabled): void
@@ -252,6 +245,11 @@ abstract class User implements UserInterface, \Serializable
         return $this->profilePictureFile;
     }
 
+    public function getProfilePicturePath()
+    {
+        return self::PROFILE_PICTURE_PATH;
+    }
+
     /**
      * @param mixed $profilePictureFile
      */
@@ -279,7 +277,7 @@ abstract class User implements UserInterface, \Serializable
             $this->username,
             $this->password,
             $this->enabled
-            ) = unserialize($serialized, array('allowed_classes' => false));
+            ) = unserialize($serialized);
     }
 
 
@@ -291,13 +289,30 @@ abstract class User implements UserInterface, \Serializable
 
     public function eraseCredentials()
     {
-        // TODO: Implement eraseCredentials() method.
+        return true;
     }
 
-    public function getProfilePicturePath()
+    public function isAccountNonExpired()
     {
-        return self::PROFILE_PICTURE_PATH;
+        return true;
     }
+
+    public function isAccountNonLocked()
+    {
+        return true;
+    }
+
+    public function isCredentialsNonExpired()
+    {
+        return true;
+    }
+
+    public function isEnabled()
+    {
+        return $this->enabled;
+    }
+
+
     #endregion
 
 

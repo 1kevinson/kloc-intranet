@@ -14,11 +14,12 @@
   "build/fonts/fa-solid-900.ttf": "/build/fonts/fa-solid-900.75f38a15.ttf",
   "build/fonts/fa-solid-900.eot": "/build/fonts/fa-solid-900.89e02bae.eot",
   "build/fonts/fa-solid-900.woff": "/build/fonts/fa-solid-900.cdfec5cf.woff",
+  "build/images/download.ics": "/build/images/download.ics",
   "build/images/fa-brands-400.svg": "/build/images/fa-brands-400.9d67fa14.svg",
   "build/images/fa-regular-400.svg": "/build/images/fa-regular-400.5d086178.svg",
   "build/images/fa-solid-900.svg": "/build/images/fa-solid-900.0724bb8b.svg",
   "build/images/house-in-crop.png": "/build/images/house-in-crop.png",
   "build/images/logo.png": "/build/images/logo.png",
   "build/images/profile.jpeg": "/build/images/profile.jpeg",
-  "build/images/register-view.jpeg": "/build/images/register-view.jpeg"
+  "build/images/register-bg.jpg": "/build/images/register-bg.jpg"
 }

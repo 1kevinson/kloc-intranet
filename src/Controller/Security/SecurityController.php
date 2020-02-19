@@ -5,6 +5,8 @@ namespace App\Controller\Security;
 
 
 use App\Entity\Users\User;
+use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
@@ -58,6 +60,30 @@ class SecurityController extends AbstractController
     {
 
     }
+
+    /**
+     * @Route("/confirm/{token}", name="security_confirm")
+     *
+     */
+    public function confirm(string $token, UserRepository $userRepository, EntityManagerInterface $entityManager)
+    {
+        $user = $userRepository->findOneBy([
+            'confirmationToken' => $token
+        ]);
+
+        if($user !== null)
+        {
+            $user->setEnabled(true);
+            $user->setConfirmationToken('');
+
+            $entityManager->flush();
+        }
+
+        return $this->render('emails/confirmation.html.twig',[
+            'user' => $user
+        ]);
+    }
+
     #endregion
 
 }
