@@ -12,7 +12,6 @@ use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 
@@ -65,7 +64,9 @@ class TenantType extends AbstractType
                    'class' => 'ml-1'
                )
            ])
-           ->add('Register', SubmitType::class);
+           ->add('Register', SubmitType::class, [
+               'label' => 'Enregistrement'
+           ]);
 
     }
 

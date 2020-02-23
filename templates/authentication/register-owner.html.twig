@@ -1,8 +1,24 @@
 {% extends 'homepage/homepage.html.twig' %}
 
-{% block title %} Inscription {% endblock %}
+{% block title %} Inscription Proprietaire{% endblock %}
 
 {% block body %}
-    <div class="row viewport-height">
+    <div class="row justify-content-center viewport-height" >
+        <div id="login-box" class="col-4 center-div-vertically">
+
+            <div class="card">
+                <div class="card-header">
+                    Enregistrez votre compte
+                </div>
+                <div class="card-body">
+                    {{ form_start(form) }}
+
+                    {{ form_widget(form) }}
+
+                    {{ form_end(form) }}
+                </div>
+            </div>
+
+        </div>
     </div>
 {% endblock %}
