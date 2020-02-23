@@ -19,7 +19,6 @@ security:
             anonymous: true
             pattern: ^/
 
-
             form_login:
                 check_path: security_login
                 login_path: security_login

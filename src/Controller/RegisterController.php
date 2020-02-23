@@ -81,7 +81,8 @@ class RegisterController extends AbstractController
      */
     public function registerOwner(UserPasswordEncoderInterface $passwordEncoder,
                                      Request $request,
-                                     TokenGenerator $tokenGenerator)
+                                     TokenGenerator $tokenGenerator,
+                                     EventDispatcherInterface $eventDispatcher)
     {
         if($this->getUser() != null){
             return $this->redirectToRoute('home_page');
@@ -101,6 +102,9 @@ class RegisterController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($owner);
             $entityManager->flush();
+
+            $userRegisterEvent = new UserRegisterEvent($owner);
+            $eventDispatcher->dispatch($userRegisterEvent, UserRegisterEvent::NAME);
 
             return $this->redirectToRoute('security_login');
         }
