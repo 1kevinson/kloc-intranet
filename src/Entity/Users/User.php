@@ -53,7 +53,7 @@ abstract class User implements AdvancedUserInterface, \Serializable
 
     /**
      * @Assert\NotBlank()
-     * @Assert\Length(min=8,max=50, minMessage="The min length is not respected")
+     * @Assert\Length(min=8,max=50, minMessage="Longueur minimale non respectée", maxMessage="Longeur maximale non respectée")
      */
     private $plainPassword;
 
@@ -66,7 +66,7 @@ abstract class User implements AdvancedUserInterface, \Serializable
     /**
      * @ORM\Column(type="string", length=50)
      * @Assert\NotBlank()
-     * @Assert\Length(min=4,max=50, minMessage="The min length is not respected")
+     * @Assert\Length(min=4,max=50, minMessage="Longueur minimale non respectée", maxMessage="Longueur maximale non respectée")
      */
     private $fullName;
 

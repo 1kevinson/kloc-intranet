@@ -5,6 +5,7 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     email_from: '%env(MAILER_FROM)%'
+    profile_pics_dir: '%kernel.project_dir%/assets/profiles'
 
 services:
     # Session Handling
