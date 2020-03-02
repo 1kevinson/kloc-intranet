@@ -11,6 +11,16 @@
     background-size: cover;
 }
 
+#register-view-tenant {
+    background: linear-gradient(to right, #e4cbf5, #c2e2f0);
+    background-size: cover;
+}
+
+#register-view-owner {
+    background: linear-gradient(to right, #c2e2f0, #e4cbf5);
+    background-size: cover;
+}
+
 /* Tenant Zone */
 #tenant-register {
     border: solid 1px #c0c0c0;
