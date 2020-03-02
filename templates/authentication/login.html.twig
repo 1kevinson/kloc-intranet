@@ -26,7 +26,10 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Mot de passe</span>
                         </div>
-                        <input type="password" name="_password" class="form-control" aria-label="Password" required >
+                        <input type="password" name="_password" class="form-control" aria-label="Password" id="password-input" required >
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="password-view" onclick="seePassword()"><i class="far fa-eye"></i></span>
+                        </div>
                     </div>
                     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 

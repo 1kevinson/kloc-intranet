@@ -66,3 +66,9 @@
     background:  #ffffff !important;
     color: var(--kloc-indigo) !important;
 }
+
+
+#password-view {
+    cursor: pointer;
+    text-decoration: none;
+}

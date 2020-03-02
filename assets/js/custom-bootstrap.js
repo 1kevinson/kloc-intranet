@@ -12,16 +12,6 @@ $(document).ready(function() {
 
     /* Remove transition CSS effect firing page loading */
     $('body').removeClass("preload");
-
-    /* Add file name in registers view */
-/*    $('.custom-file-input').on('change',function(){
-        //get the file name
-        var fileName = $(this).val();
-        var cleanFileName = fileName.replace('C:\\fakepath\\', "..\\");
-        //replace the "Choose a file" label
-        $(this).next('.custom-file-label').html(cleanFileName);
-    })*/
-
 });
 
 $(document).on('change', '.custom-file-input', function (event) {

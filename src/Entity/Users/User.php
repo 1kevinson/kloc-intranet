@@ -14,8 +14,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
- * @UniqueEntity(fields="email", message="This e-mail is already in use")
- * @UniqueEntity(fields="username", message="This username is already in use")
+ * @UniqueEntity(fields="email", message="Cet adresse email est déjà utilisée")
+ * @UniqueEntity(fields="username", message="Cet utilisateur existe déjà")
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="type", type="string")
  * @ORM\DiscriminatorMap({"tenant" = "Tenant", "owner" = "Owner", "admin" = "Admin"})

@@ -40,15 +40,21 @@ class TenantType extends AbstractType
              'label' => 'Nom Complet'
            ])
            ->add('username',TextType::class,[
-               'label' => 'Nom d\'utilisateur '
+               'label' => 'Identifiant',
+               'help' => 'Entrez un identifiant d\'au moins 4 caractères'
            ])
            ->add('email',EmailType::class,[
                'label' => 'Adresse email'
            ])
            ->add('plainPassword', RepeatedType::class, [
                'type' => PasswordType::class,
-               'first_options' => ['label' => 'Mot de passe'],
-               'second_options' => ['label' => 'Confirmer mot de passe']
+               'first_options' => [
+                   'label' => 'Mot de passe',
+                   'help' => 'Entrez un mot de passe d\'au moins 8 caractères'
+               ],
+               'second_options' => [
+                   'label' => 'Confirmer mot de passe'
+               ]
            ])
            ->add('profile_picture',FileType::class, [
                'label' => 'Votre Photo',
@@ -60,13 +66,14 @@ class TenantType extends AbstractType
                    new File([
                        'maxSize' => '2048k',
                        'mimeTypes' => [
-                           '\'image/*\',',
+                           "image/*",
                        ],
                        'mimeTypesMessage' => 'Veuillez renseigner un fichier image valide',
                    ])
                ],
                'required' => false,
-               'empty_data' => 'NO_PICTURE'
+               'help' => 'La photo ne doit pas dépasser 2 Mo',
+               'empty_data' => NULL
            ])
            ->add('termsAgreed', CheckboxType::class, [
                'mapped' => false,
