@@ -9,3 +9,59 @@
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+
+.center-div-horizontally {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tenant-card {
+    width: 19rem;
+    height: 38rem;
+    white-space: nowrap;
+    border: solid 1px #d4d4d4;
+    box-shadow: 3px 10px 19px 3px rgba(171, 171, 171, 0.60);
+    border-radius: 13px;
+    margin-top: 2%;
+
+    /* Mouse out */
+    transition: background 2s ease-out, box-shadow 1s, transform 1s;
+}
+
+@media (min-width: 768px) {
+    .tenant-card {
+        width: 29rem;
+        height: 48rem;
+        white-space: nowrap;
+        border: solid 1px #d4d4d4;
+        box-shadow: 3px 10px 19px 3px rgba(171, 171, 171, 0.60);
+        border-radius: 13px;
+        margin-top: 2%;
+
+        /* Mouse out */
+        transition: background 2s ease-out, box-shadow 1s, transform 1s;
+    }
+}
+
+
+.tenant-card:hover {
+    transform: scale(1.009, 1.009);
+    box-shadow: 3px 10px 19px -3px rgba(157, 157, 157, 0.77);
+    text-decoration: none;
+
+    /* Mouse in */
+    transition: all 0.9s cubic-bezier(0.165, 0.84, 0.45, 1.2);
+}
+
+.tenant-card-content {
+    height: auto;
+    background: white;
+}
+
+#card-image {
+    /*clip-path: polygon(6% 4%, 96% 4%, 93% 86%, 7% 96%);*/
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    border-bottom: solid 2px rgba(145, 73, 235, 0.75);
+}
