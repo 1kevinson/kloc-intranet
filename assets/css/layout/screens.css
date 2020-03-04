@@ -2,8 +2,13 @@
 
 }
 
+/* Use for set the page height */
 .viewport-height {
     height: 90vh;
+}
+
+.viewport-width {
+    height: 100vw;
 }
 
 #register-views {
@@ -28,7 +33,7 @@
     width: calc(7.8vw + 7.8vh + 7.5vmin);
     height: calc(4.8vw + 4.8vh + 4.5vmin);
 
-    /* hover Linear Gradient without whote flash */
+    /* hover Linear Gradient without white flash */
     background: rgb(72,129,235);
     background: linear-gradient(32deg, rgba(72,129,235,1) 100%, rgba(255,255,255,1) 100%);
 
@@ -60,7 +65,7 @@
     width: calc(7.8vw + 7.8vh + 7.5vmin);
     height: calc(4.8vw + 4.8vh + 4.5vmin);
 
-    /* hover Linear Gradient without whote flash */
+    /* hover Linear Gradient without white flash */
     background: #9c4fb5;
     background: linear-gradient(32deg,#9c4fb5 100%, rgba(255,255,255,1) 100%);
 
@@ -80,6 +85,21 @@
 
     /* Mouse in */
     transition: all 0.9s cubic-bezier(0.165, 0.84, 0.45, 1.2);
+}
+
+
+/* TENANT PAGE STYLE */
+
+#tenant-page-right {
+    border: solid 1px #222222;
+}
+
+#tenant-page-left-up {
+    height: 42rem;
+}
+
+#tenant-page-left-down {
+
 }
 
 

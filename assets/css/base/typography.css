@@ -106,9 +106,41 @@ body{
 
 
 
+/* Card Typography */
+.name {
+    font-size: 1.6rem;
+    text-align: center;
+}
 
+.last-name {
+    font-size: 1.9rem;
+    font-weight: bold;
+    margin-left: 2%;
+}
 
+.regular-text {
+    font-size: 1.2rem;
+    margin-left: 3%;
+}
 
+.regular-text-italic {
+    font-size: 1.15rem;
+    font-style: italic;
+    margin-left: 2%;
+}
+
+.gray-text {
+    color: #8892a0;
+}
+
+.green-text {
+    color: #2baf49;
+}
+
+.regular-text-low {
+    font-size: 1.15rem;
+    margin-left: 2%;
+}
 
 
 

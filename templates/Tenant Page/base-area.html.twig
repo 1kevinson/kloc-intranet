@@ -1,0 +1,36 @@
+{% extends 'homepage/homepage.html.twig' %}
+
+{% block title %} Page Locataire {% endblock %}
+
+{% block body %}
+    <div class="row viewport-height" id="tenant-page">
+        <!-- infos zone -->
+        <div class="col-md-4 row">
+            <div class="col-md-12" id="tenant-page-left-up">
+                <div class="tenant-card center-div-horizontally">
+                    <img id="card-image" src="{{ asset('build/profiles/riley.jpg') }}" width="100%" height="45%" alt="">
+                    <div class="tenant-card-content">
+                        <p class="mt-2 text-center"><span class="name">Karianne</span> <span class="last-name">NICOLAS</span></p>
+                        <hr>
+                        <h3 class="regular-text"><i class="far fa-handshake"></i> Statut : <span class="badge badge-pill badge-success regular-text-low">A jour dans les paiements</span></h3>
+                        <span class="regular-text"><i class="fas fa-file-signature"></i> Contrat : <span class="regular-text-low green-text">En cours</span> </span> <br>
+                        <span class="regular-text gray-text"><i class="fas fa-key"></i> Locataire depuis : <span class="regular-text-italic">24 Avril 2019</span></span>
+                        <hr>
+                        <p class="regular-text"><i class="fas fa-home"></i> Logement : <span class="regular-text-low">18 Avenue Baudelaire </span></p>
+                        <p class="regular-text"><i class="far fa-credit-card"></i>  Echeance de paiement : </p>
+                        <div class="progress mx-3" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" id="tenant-page-left-down">
+
+            </div>
+        </div>
+        <!-- cards zone -->
+        <div class="col-8"  id="tenant-page-right">
+
+        </div>
+    </div>
+{% endblock %}

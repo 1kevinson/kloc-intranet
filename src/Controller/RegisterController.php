@@ -23,7 +23,6 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
  */
 class RegisterController extends AbstractController
 {
-    public function __construct() { }
 
     /**
      * @Route("/choice", name="register_choice")
