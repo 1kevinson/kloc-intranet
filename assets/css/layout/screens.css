@@ -12,7 +12,7 @@
 }
 
 #register-views {
-    background: linear-gradient(to right, #d3cce3, #e9e4f0);
+    background: linear-gradient(to right, #c2e2f0, #e4cbf5);
     background-size: cover;
 }
 
@@ -95,7 +95,7 @@
 }
 
 #tenant-page-left-up {
-    height: 42rem;
+    border: solid 1px #222222;
 }
 
 #tenant-page-left-down {

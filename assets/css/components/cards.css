@@ -17,7 +17,7 @@
 }
 
 .tenant-card {
-    width: 19rem;
+    width: 18rem;
     height: 38rem;
     white-space: nowrap;
     border: solid 1px #d4d4d4;
@@ -28,22 +28,6 @@
     /* Mouse out */
     transition: background 2s ease-out, box-shadow 1s, transform 1s;
 }
-
-@media (min-width: 768px) {
-    .tenant-card {
-        width: 29rem;
-        height: 48rem;
-        white-space: nowrap;
-        border: solid 1px #d4d4d4;
-        box-shadow: 3px 10px 19px 3px rgba(171, 171, 171, 0.60);
-        border-radius: 13px;
-        margin-top: 2%;
-
-        /* Mouse out */
-        transition: background 2s ease-out, box-shadow 1s, transform 1s;
-    }
-}
-
 
 .tenant-card:hover {
     transform: scale(1.009, 1.009);
@@ -64,4 +48,15 @@
     border-top-left-radius: 13px;
     border-top-right-radius: 13px;
     border-bottom: solid 2px rgba(145, 73, 235, 0.75);
+}
+
+
+
+
+/* Zone Media Queries*/
+@media (min-width: 2000px) {
+    .tenant-card {
+        width: 27rem;
+        height: 50rem;
+    }
 }

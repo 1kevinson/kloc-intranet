@@ -10,6 +10,8 @@ $(document).ready(function() {
 
     /* Remove transition CSS effect firing page loading */
     $('body').removeClass("preload");
+
+    console.log( "height : " + $(window).height(), " Width: " + $(window).width())
 });
 
 /* Upload photo on register page */
