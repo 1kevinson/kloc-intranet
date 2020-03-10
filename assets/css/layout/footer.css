@@ -1,17 +1,13 @@
-.footer{
-    border-top: #4e555b thin;
-    font-size: calc(0.4vw + 0.4vh + 0.2vmin);
-    background-color: var(--kloc-grey-light);
+footer {
+    /*background-color: rgba(156, 151, 161, 0.47) !important;*/
 }
 
-@media (max-width: 992px) {
-    .footer{
-        font-size: calc(0.7vw + 0.7vh + 0.4vmin);
-    }
-}
-
-@media (min-width: 992px) {
-    .footer{
-        height: 5vh;
-    }
+.footer-custom {
+    height: 3rem;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(200, 209, 212, 0.53);
+    color: white;
+    text-align: center;
 }

@@ -16,47 +16,67 @@
     margin-right: auto;
 }
 
-.tenant-card {
-    width: 18rem;
-    height: 38rem;
-    white-space: nowrap;
-    border: solid 1px #d4d4d4;
-    box-shadow: 3px 10px 19px 3px rgba(171, 171, 171, 0.60);
-    border-radius: 13px;
-    margin-top: 2%;
 
-    /* Mouse out */
-    transition: background 2s ease-out, box-shadow 1s, transform 1s;
+#tenant-card {
+    width: 80%;
 }
 
-.tenant-card:hover {
-    transform: scale(1.009, 1.009);
-    box-shadow: 3px 10px 19px -3px rgba(157, 157, 157, 0.77);
-    text-decoration: none;
-
-    /* Mouse in */
-    transition: all 0.9s cubic-bezier(0.165, 0.84, 0.45, 1.2);
+.tenant-card-links-lg {
+    height: 13rem;
+    font-size: 2rem;
+    color: #5a6268;
 }
 
-.tenant-card-content {
-    height: auto;
-    background: white;
+.small-text-cards {
+    font-size: 1.2rem;
 }
 
-#card-image {
-    /*clip-path: polygon(6% 4%, 96% 4%, 93% 86%, 7% 96%);*/
-    border-top-left-radius: 13px;
-    border-top-right-radius: 13px;
-    border-bottom: solid 2px rgba(145, 73, 235, 0.75);
+.tenant-neighbors-img {
+    width: 80px;
+    height: 80px;
+    border: solid 2px rgba(148, 148, 148, 0.85);
 }
 
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
 
+.tenant-neighbors {
+    margin-bottom: 0.5rem;
+}
 
+@media (min-width: 768px) {
+    #tenant-page-left-sm-card {
+        width: 75%;
+        margin-top: 1rem;
+        font-size: 1.3rem;
+    }
 
-/* Zone Media Queries*/
-@media (min-width: 2000px) {
-    .tenant-card {
-        width: 27rem;
-        height: 50rem;
+    #tenant-neighbors-img-sm {
+        width: 200px;
+        height: 200px;
+        border: solid 2px rgba(148, 148, 148, 0.85);
+        margin-right: 1rem;
+        margin-left: 1.5rem;
+    }
+}
+
+@media (max-width: 2000px) {
+    #tenant-card {
+        width: 75%;
+    }
+}
+
+@media (min-width: 2001px) {
+    #tenant-card {
+        width: 60%;
+    }
+}
+
+/* MBP 13 = 1680px */
+@media (min-width: 1681px) {
+    .tenant-card-neighbors {
+        width: 90%;
     }
 }

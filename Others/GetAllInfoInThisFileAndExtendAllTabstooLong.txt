@@ -1,32 +1,22 @@
-Color code :
+>> Color code :
 
 violet : #d17df6
 bleu :  #4d83e6
 gris :  #eeeff0
 
 
-mbp13
+>> mbp13
 width: 1680  x length: 1050
 
- #region constantes
- #endregion
-
- #region properties
- #endregion
-
- #region constructor
- #endregion
-
- #region getters / setters
- #endregion
-
- #region methods
- #endregion
 
 
+>> GRIDS
+col-xs       -  <576px    // Extra small screen / phone
+col-sm-*   -  ≥576px   // Small screen / phone
+col-md-*   -  ≥768px   // Medium screen / tablet
+col-lg-*     -  ≥992px    // Large screen / desktop
+col-xl-*      -  ≥1200px   // Extra large screen / wide desktop
 
-    /**
-     * @var array
-     * @ORM\Column(type="simple_array")
-     */
-    private $roles;
+
+>> Demo URL
+https://www.codeply.com/go/wzgWxvwyb3

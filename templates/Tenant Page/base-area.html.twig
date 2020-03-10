@@ -3,12 +3,12 @@
 {% block title %} Page Locataire {% endblock %}
 
 {% block body %}
-    <div class="row viewport-height" id="tenant-page">
+    <div class="container-fluid">
+        <div class="row" id="tenant-page">
 
-        {% include 'Tenant Page/left-area.html.twig' %}
+            {% include 'Tenant Page/left-area.html.twig' %}
 
-        <!-- cards zone -->
-        <div class="col-8"  id="tenant-page-right">
+            {% include 'Tenant Page/right-area.html.twig' %}
 
         </div>
     </div>

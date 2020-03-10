@@ -1,7 +1,3 @@
-#login-space {
-
-}
-
 /* Use for set the page height */
 .viewport-height {
     height: 90vh;
@@ -11,6 +7,8 @@
     height: 100vw;
 }
 
+
+/* Registration Background */
 #register-views {
     background: linear-gradient(to right, #c2e2f0, #e4cbf5);
     background-size: cover;
@@ -89,17 +87,30 @@
 
 
 /* TENANT PAGE STYLE */
-
 #tenant-page-right {
     border: solid 1px #222222;
 }
 
-#tenant-page-left-up {
+#tenant-page-right-sm {
     border: solid 1px #222222;
 }
 
-#tenant-page-left-down {
+#tenant-page-left {
+    border: solid 1px #222222;
+}
 
+#tenant-page-left-sm {
+    border: solid 1px #70e976;
+}
+
+#tenant-page-left-up {
+    border: solid 1px #70e976;
+}
+
+#tenant-page-left-down {
+    border: solid 1px #6325e9;
+    height: 23rem;
+    overflow-y: scroll;
 }
 
 
