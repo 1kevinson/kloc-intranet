@@ -101,15 +101,15 @@
 }
 
 /* MBP 13 = 1680px */
-@media (min-width: 1681px) {
+@media (min-width: 1680px) {
     .tenant-card-neighbors {
-        width: 90%;
-        font-size: 1.2rem;
+        width: 85%;
+        font-size: 0.85rem;
     }
 
     #tenant-card {
         width: 60%;
-        font-size: 1.15rem;
+        font-size: 1.1rem;
     }
 
     .card-title {
@@ -121,8 +121,8 @@
     }
 
     .tenant-neighbors-img {
-        width: 6.2rem;
-        height: 6.2rem;
+        width: 5.2rem;
+        height: 5.2rem;
     }
 }
 
