@@ -103,6 +103,23 @@ body{
     font-size: 50px;
 }
 
+/* Text size */
+.small-text-cards {
+    font-size: 1.1rem;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+/* Text colors */
+.grey-text {
+    color: #808c93;
+}
+
+.green-text {
+     color: #28a745;
+}
 
 
 

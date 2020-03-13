@@ -38,16 +38,17 @@ class TenantController extends AbstractController
      */
     public function tenantView(string $username)
     {
-        $username = $this->getUser()->getUsername();
-        $tenant = $this->manager->getRepository(Tenant::class)->findOneBy([
-            'username' => $username
-        ]);
+        if($this->getUser() != null)
+        {
+            $username = $this->getUser()->getUsername();
+            $tenant = $this->manager->getRepository(Tenant::class)->findOneBy(['username' => $username ]);
 
-        dump($tenant);
+            return $this->render('Tenant Page/base-area.html.twig', [
+                'tenant' => $tenant
+            ]);
+        }
 
-        return $this->render('Tenant Page/base-area.html.twig', [
-            'tenant' => $tenant
-        ]);
+        return $this->redirectToRoute('home_page');
     }
     #endregion
 

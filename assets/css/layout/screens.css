@@ -86,6 +86,7 @@
 }
 
 
+
 /* TENANT PAGE STYLE */
 #tenant-page-right {
     border: solid 1px #222222;
@@ -113,4 +114,9 @@
     overflow-y: scroll;
 }
 
-
+/* Media queries sections */
+@media (min-width: 2000px) {
+    #tenant-page-left-down {
+        height: 35rem;
+    }
+}

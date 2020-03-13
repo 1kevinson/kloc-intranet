@@ -27,25 +27,38 @@
     color: #5a6268;
 }
 
-.small-text-cards {
-    font-size: 1.2rem;
-}
+
 
 .tenant-neighbors-img {
-    width: 80px;
-    height: 80px;
+    width: 6rem;
+    height: 6rem;
     border: solid 2px rgba(148, 148, 148, 0.85);
 }
+
 
 .card-horizontal {
     display: flex;
     flex: 1 1 auto;
 }
 
-.tenant-neighbors {
-    margin-bottom: 0.5rem;
+.tenant-card-neighbors {
+    border-radius: 4.8rem;
+    width: 95%;
+    transition: background 2s ease-in, box-shadow 1s, transform 1s;
 }
 
+.tenant-card-neighbors:hover {
+    border-radius: 4.8rem;
+    box-shadow: 1px 5px 15px -10px #656565;
+    transform: scale(1.02, 1.02);
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.45, 1.2);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+/* MEDIA QUERIES */
+/* Tablet */
 @media (min-width: 768px) {
     #tenant-page-left-sm-card {
         width: 75%;
@@ -62,15 +75,28 @@
     }
 }
 
-@media (max-width: 2000px) {
-    #tenant-card {
-        width: 75%;
+/* Regular laptop */
+@media (min-width: 992px) and (max-width: 1440px) {
+    .tenant-card-neighbors {
+        font-size: 0.8rem;
+        border-radius: 4.8rem;
     }
-}
 
-@media (min-width: 2001px) {
     #tenant-card {
-        width: 60%;
+        width: 100%;
+    }
+
+    .tenant-neighbors-img {
+        width: 4.2rem;
+        height: 4.2rem;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .small-text-cards {
+        font-size: 1rem;
     }
 }
 
@@ -78,5 +104,52 @@
 @media (min-width: 1681px) {
     .tenant-card-neighbors {
         width: 90%;
+        font-size: 1.2rem;
+    }
+
+    #tenant-card {
+        width: 60%;
+        font-size: 1.15rem;
+    }
+
+    .card-title {
+        font-size: 1.7rem;
+    }
+
+    .small-text-cards {
+        font-size: 1.2rem;
+    }
+
+    .tenant-neighbors-img {
+        width: 6.2rem;
+        height: 6.2rem;
     }
 }
+
+/* extra large */
+@media (min-width: 2000px) {
+    #tenant-card {
+        width: 55% !important;
+        font-size: 1.2rem;
+    }
+
+    .tenant-neighbors-img {
+        width: 6.5rem;
+        height: 6.5rem;
+    }
+
+    .card-title {
+        font-size: 2rem;
+    }
+
+    .small-text-cards {
+        font-size: 1.5rem;
+    }
+
+    .tenant-card-neighbors {
+        width: 75% !important;
+        font-size: 1.2rem;
+    }
+}
+
+

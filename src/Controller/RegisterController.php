@@ -125,8 +125,6 @@ class RegisterController extends AbstractController
             $profilePicture = $form->get('profile_picture')->getData();
             $randomstring = new TokenGenerator();
 
-            dump($profilePicture);
-
             if(is_string($profilePicture) != 1 && $profilePicture != NULL)
             {
                 $originalFilename = pathinfo($profilePicture->getClientOriginalName(), PATHINFO_FILENAME);
