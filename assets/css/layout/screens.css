@@ -89,27 +89,27 @@
 
 /* TENANT PAGE STYLE */
 #tenant-page-right {
-    border: solid 1px #222222;
+    /*border: solid 1px #222222;*/
 }
 
 #tenant-page-right-sm {
-    border: solid 1px #222222;
+    /*border: solid 1px #222222;*/
 }
 
 #tenant-page-left {
-    border: solid 1px #222222;
+    /*border: solid 1px #222222;*/
 }
 
 #tenant-page-left-sm {
-    border: solid 1px #70e976;
+    /*border: solid 1px #70e976;*/
 }
 
 #tenant-page-left-up {
-    border: solid 1px #70e976;
+    /*border: solid 1px #70e976;*/
 }
 
 #tenant-page-left-down {
-    border: solid 1px #6325e9;
+    /*border: solid 1px #6325e9;*/
     height: 23rem;
     overflow-y: scroll;
 }

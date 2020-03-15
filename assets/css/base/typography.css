@@ -70,6 +70,12 @@ body{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+#twitter-home {
+    height: 100%;
+    float: right;
+}
+
 @media (max-width: 992px) {
     .slogan-text{
         margin-top: 10px;
@@ -77,15 +83,15 @@ body{
     }
 }
 
-#twitter-home {
-    height: 100%;
-    float: right;
-}
 @media (max-width: 992px) {
     #twitter-home {
-       border-bottom: solid 1px #5a6268;
+        border-bottom: solid 1px #5a6268;
     }
 }
+
+
+
+
 
 
 #home-page{
@@ -106,6 +112,11 @@ body{
 /* Text size */
 .small-text-cards {
     font-size: 1.1rem;
+}
+
+.big-text-bold {
+    font-size: 1.4rem;
+    font-weight: bold;
 }
 
 .card-title {
