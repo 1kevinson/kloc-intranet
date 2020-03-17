@@ -8,8 +8,8 @@
 
  job 1:
    stage: build
-   script: composer install
+   script: echo "Build ok"
 
  job 2:
    stage: test
-   script: echo "test ok"
+   script: echo "Test ok"
