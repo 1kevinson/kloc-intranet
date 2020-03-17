@@ -12,4 +12,4 @@
 
  job 2:
    stage: test
-   script: echo "Test ok"
+   script: curl ifconfig.me/all.json
