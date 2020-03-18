@@ -2,12 +2,11 @@
   - cd /home/hosting/applications/kloc-pack
 
  stages:
-   - composer
-   - pull
+   - test
 
  job 1:
-   stage: composer
-   script: ll
+   stage: test
+   script: whoiam
    tags:
     - vps
 
@@ -17,8 +16,8 @@
 #   tags:
 #    - vps
 
- job 3:
-  stage: pull
-  script: git pull
-  tags:
-   - vps
+# job 3:
+#  stage: pull
+#  script: git pull
+#  tags:
+#   - vps
