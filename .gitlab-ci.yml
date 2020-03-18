@@ -1,5 +1,5 @@
  before_script:
-  - cd /
+  - cd /home/hosting/applications
 
  stages:
    - exit
@@ -7,7 +7,9 @@
 
  job 1:
    stage: exit
-   script: pwd
+   script:
+     - pwd
+     - ls -l
    tags:
     - linux
 
