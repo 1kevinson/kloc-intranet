@@ -1,5 +1,5 @@
  before_script:
-  - cd /home/hosting/applications
+  - cd /
 
  stages:
    - exit
