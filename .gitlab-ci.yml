@@ -1,5 +1,5 @@
- before_script:
-  - cd /home/hosting/applications/kloc-pack/
+# before_script:
+#  - cd /home/hosting/applications/kloc-pack/
 
  stages:
    - test
