@@ -12,7 +12,7 @@
     - linux
 
  job 2:
-   stage: npm
+   stage: who
    script: whoiam
    tags:
     - linux
