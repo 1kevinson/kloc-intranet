@@ -1,5 +1,5 @@
  before_script:
-  - cd /
+  - cd /home
 
  stages:
    - exit
