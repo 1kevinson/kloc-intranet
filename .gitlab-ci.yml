@@ -1,24 +1,23 @@
  before_script:
-  - cd /home/hosting/applications/kloc-pack
+  - cd /var/www/applications
 
  stages:
-   - list
-   - git
+   - List VPS folder content
 
- Checck dir:
-   stage: list
+ Check dir:
+   stage: List VPS folder content
    script:
      - pwd
      - ls -l
    tags:
-    - linux
+    - dev
 
- Check git:
-   stage: git
-   script:
-     - git remote -v
-   tags:
-     - linux
+# Check git:
+#   stage: git
+#   script:
+#     - git remote -v
+#   tags:
+#     - linux
 
 # job 2:
 #   stage: who
