@@ -9,7 +9,7 @@ monolog:
         nested:
             type: stream
             path: "%kernel.logs_dir%/%kernel.environment%.log"
-            level: debug
+            level: INFO
             channels: ["!php"]
         console:
             type: console
