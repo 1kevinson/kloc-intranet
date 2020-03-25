@@ -3,45 +3,35 @@
  {% block title %} Kloc - Home {% endblock %}
  {% block header %}  {% include('homepage/header.html.twig') %} {% endblock %}
 
-{% block stylesheets %}
-    {{ parent() }}
-
-    <style>
-        #image-home {
-            background-image:
-                    linear-gradient(to bottom, rgba(184,90,239,0.3), rgba(77,131,230,0.2)),
-                    url('{{ asset('build/images/house-in-crop.png') }}');
-            height: 50vh;
-            background-size: cover;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-        }
-    </style>
-{% endblock %}
-
 {% block body %}
-     <!-- Linear gradient  -->
-     <div class="col-md-12" id="image-home">
-        <!-- <div id="message-home">
-             Le site est en maintenance actuellement, veuillez nous excuser pour la gêne occasionnée
-         </div> -->
+    <!-- Small devices section -->
+     <div class="col-12 d-lg-none" id="image-home-sm">
+         small
      </div>
-     <div id="home-page">
-         <div class="col-lg-6" id="slogan-home">
-             <p class="slogan-text">Gérez votre location en toute simplicité et transparence.</p>
-             <p class="slogan-text">Communiquez avec vos colocataires en temps réel</p>
-             <p class="slogan-text">Acces à vos factures et documents locatifs</p>
-         </div>
-         {# When extend homepage #}
-         {% if hrefGenerated is defined or labelGenerated is defined %}
-         <div class="col-lg-6" id="twitter-home">
-             {# Custom Twitter widget #}
-             <a class="twitter-timeline" data-lang="fr" data-height = "45vh" data-theme="light" href="{{ hrefGenerated }}" data-chrome="transparent ">
-                 {{ labelGenerated }}</a>
-             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-         </div>
-         {% endif %}
-     </div>
+
+    <!-- large devices section -->
+    <div class="col-lg-12 viewport-height d-none d-lg-block" id="image-home">
+        <div class="row">
+            <div class="col-lg-7">
+                <div id="home-page-slogan">
+                    <p id="home-big-slogan">Votre application dédiée à la gestion de votre location</p>
+                    <span class="home-md-slogan"> Accedez à vos factures de loyer </span> <br>
+                    <span class="home-md-slogan"> Accès et gestion de votre contrat </span>
+                    <p class="home-md-slogan"> Suivi de vos paiements mensuels</p>
+
+
+                    <br>
+                    <a id="home-btn-login" class="btn btn-light my-1 mr-4" href="{{ path('security_login') }}">Connexion</a>
+                </div>
+            </div>
+            <div class="col-lg-5" id="embedded-apple-music">
+                <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="450" class="ml-4"
+                        style="width:90%;max-width:660px;overflow:hidden;background:transparent;"
+                        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+                        src="https://embed.music.apple.com/fr/playlist/in-my-room/pl.2a0b1ea7704842f4b956e959067b8389?l=fr"></iframe>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {% block footer %}  {% include('homepage/footer.html.twig') %} {% endblock %}

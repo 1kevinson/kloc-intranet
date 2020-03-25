@@ -87,6 +87,22 @@
 
 
 
+/* Homepage */
+#image-home {
+    background:  linear-gradient(to top, rgba(55, 65, 229, 0.8),rgba(184, 90, 239, 0.81));
+    background-size: cover;
+}
+
+#embedded-apple-music {
+    margin-top: 22rem;
+}
+
+#embedded-apple-music:hover {
+    opacity: 0.9;
+}
+
+
+
 /* TENANT PAGE STYLE */
 #tenant-page-right {
     /*border: solid 1px #222222;*/

@@ -26,6 +26,11 @@
     font-weight: bold;
 }
 
+@font-face {
+    font-family: "Barlow";
+    src: url("../../../Others/Barlow-Regular.ttf");
+}
+
 /* CSS global variable */
 :root{
 
@@ -39,7 +44,7 @@
 }
 
 html * {
-    font-family: "PT Sans Narrow" ;
+    font-family: "Barlow" ;
     font-size: 100%;
     --kloc-indigo: #9356ca;
     --kloc-blue: #4d83e6;
@@ -89,24 +94,31 @@ body{
     }
 }
 
-
-
-
-
-
+/* Homepage */
 #home-page{
     height: 45vh;
     background-color: rgba(255, 255, 255, 0.58);
 }
 
+#home-page-slogan {
+    margin-top: 15rem;
+    margin-left: 5rem;
+}
 
-#message-home {
-    height: 7vh;
-    z-index: -1;
-    color: white;
-    border: solid 2px white;
-    width: 100%;
-    font-size: 50px;
+#home-big-slogan {
+    font-size: 3.2rem;
+    font-family: Raleway;
+    font-weight: bolder;
+    color: #f9f9f9;
+}
+
+.home-md-slogan {
+    font-size: 2.2rem;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+#home-btn-login {
+    font-size: 1.5rem;
 }
 
 /* Text size */
