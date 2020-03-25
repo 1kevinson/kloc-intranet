@@ -35,7 +35,7 @@
     background: rgb(72,129,235);
     background: linear-gradient(32deg, rgba(72,129,235,1) 100%, rgba(255,255,255,1) 100%);
 
-    font-size: calc(1.2vw + 1.2vh + 1.2vmin);
+    font-size: calc(1.1vw + 1.1vh + 1.1vmin);
     color: white;
     padding-left: 4%;
 
@@ -67,7 +67,7 @@
     background: #9c4fb5;
     background: linear-gradient(32deg,#9c4fb5 100%, rgba(255,255,255,1) 100%);
 
-    font-size: calc(1.2vw + 1.2vh + 1.2vmin);
+    font-size: calc(1vw + 1vh + 1.1vmin);
     color: white;
     padding-left: 4%;
 
