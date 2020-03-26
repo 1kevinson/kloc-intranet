@@ -1,7 +1,8 @@
 /* Use for set the page height */
 .viewport-height {
-    height: 90vh;
+    height: 92vh;
 }
+
 
 .viewport-width {
     height: 100vw;
@@ -43,6 +44,18 @@
     transition: background 2s ease-out, box-shadow 1s, transform 1s;
 }
 
+/* extra large */
+@media (min-width: 2000px) {
+    #tenant-register {
+        font-size: 3.2rem;
+        height: 14rem !important;
+    }
+
+    #owner-register {
+        font-size: 2.8rem !important;
+        height: 14rem !important;
+    }
+}
 
 #tenant-register:hover
 {
@@ -93,6 +106,12 @@
     background-size: cover;
 }
 
+#image-home-sm {
+    background:  linear-gradient(to top, rgba(55, 65, 229, 0.8),rgba(184, 90, 239, 0.81));
+    background-size: cover;
+}
+
+
 #embedded-apple-music {
     margin-top: 22rem;
 }
@@ -126,13 +145,27 @@
 
 #tenant-page-left-down {
     /*border: solid 1px #6325e9;*/
-    height: 23rem;
+    height: 15rem;
+    width: 75%;
     overflow-y: scroll;
 }
+
+/* Regular laptop */
+@media (min-width: 992px) and (max-width: 1440px) {
+    #tenant-page-left-down {
+        width: 100%;
+    }
+}
+
+
+#tenant-page-left-down:hover {
+    border: solid 1px #6325e9;
+}
+
 
 /* Media queries sections */
 @media (min-width: 2000px) {
     #tenant-page-left-down {
-        height: 35rem;
+        height: 25rem;
     }
 }

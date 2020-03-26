@@ -5,8 +5,19 @@
 
 {% block body %}
     <!-- Small devices section -->
-     <div class="col-12 d-lg-none" id="image-home-sm">
-         small
+     <div class="col-12 d-lg-none viewport-height" id="image-home-sm">
+         <div class="row">
+             <div id="home-page-slogan-sm">
+                 <p id="home-big-slogan-sm">Votre application dédiée à la gestion de votre location</p>
+                 <span class="home-md-slogan-sm"> Accedez à vos factures de loyer </span> <br>
+                 <span class="home-md-slogan-sm"> Accès et gestion de votre contrat </span>
+                 <p class="home-md-slogan-sm"> Suivi de vos paiements mensuels</p>
+
+
+                 <br>
+                 <a id="home-btn-login-sm" class="btn btn-light my-1 mr-4" href="{{ path('security_login') }}">Connexion</a>
+             </div>
+         </div>
      </div>
 
     <!-- large devices section -->

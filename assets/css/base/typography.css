@@ -114,11 +114,35 @@ body{
 
 .home-md-slogan {
     font-size: 2.2rem;
+    font-family: Raleway;
     color: rgba(255, 255, 255, 0.76);
 }
 
 #home-btn-login {
     font-size: 1.5rem;
+}
+
+/* Homepage sm*/
+#home-page-slogan-sm {
+    margin-top: 25rem;
+    margin-left: 2rem;
+}
+
+#home-big-slogan-sm {
+    font-size: 3.2rem;
+    font-family: Raleway;
+    font-weight: bolder;
+    color: #f9f9f9;
+}
+
+.home-md-slogan-sm {
+    font-size: 2.2rem;
+    font-family: Raleway;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+#home-btn-login-sm {
+    font-size: 2rem;
 }
 
 /* Text size */
@@ -146,9 +170,29 @@ body{
 
 
 
+/* login box small devices */
+#login-box-sm {
+    font-size: 1.8rem !important;
+}
 
+@media (max-device-width: 768px) {
+    .input-group-text {
+        font-size: 1.8rem !important;
+    }
+}
 
+@media (min-device-width: 768px) and (max-device-width: 1600px) {
+    .input-group-text {
+        font-size: 1rem !important;
+    }
 
+    .col-4 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+}
 
 
 

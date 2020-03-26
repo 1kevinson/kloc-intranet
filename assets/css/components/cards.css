@@ -70,7 +70,7 @@
     #tenant-page-left-sm-card {
         width: 80%;
         margin-top: 2rem;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     #tenant-neighbors-img-sm {
@@ -100,16 +100,16 @@
 @media (min-width: 992px) and (max-width: 1440px) {
     .tenant-card-neighbors {
         font-size: 0.8rem;
-        border-radius: 4.8rem;
+        border-radius: 4.9rem;
     }
 
     #tenant-card {
-        width: 100%;
+        width: 85%;
     }
 
     .tenant-neighbors-img {
-        width: 4.2rem;
-        height: 4.2rem;
+        width: 5.2rem;
+        height: 5.2rem;
     }
 
     .card-title {
@@ -129,7 +129,7 @@
     }
 
     #tenant-card {
-        width: 60%;
+        width: 65%;
         font-size: 1.1rem;
     }
 
@@ -150,7 +150,7 @@
 /* extra large */
 @media (min-width: 2000px) {
     #tenant-card {
-        width: 45% !important;
+        width: 55% !important;
         font-size: 1.1rem;
     }
 
@@ -168,7 +168,6 @@
     }
 
     .tenant-card-neighbors {
-        width: 45% !important;
         font-size: 0.9rem;
     }
 }
