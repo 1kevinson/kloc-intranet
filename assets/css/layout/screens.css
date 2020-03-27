@@ -113,11 +113,12 @@
 
 
 #embedded-apple-music {
-    margin-top: 22rem;
+    margin-top: 16rem;
+    opacity: 0.92;
 }
 
 #embedded-apple-music:hover {
-    opacity: 0.9;
+    opacity: 1;
 }
 
 
@@ -159,7 +160,7 @@
 
 
 #tenant-page-left-down:hover {
-    border: solid 1px #6325e9;
+    border-top: solid 1px #6325e9;
 }
 
 
