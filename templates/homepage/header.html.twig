@@ -4,10 +4,13 @@
         <img src="{{asset('build/images/logo.png')}}" width="35" height="35" class="d-inline-block align-top" alt="">
         <span id="logo-name" class="ml-2">Kloc-Intranet</span>
     </a>
-
     <div>
     {% if not is_granted('ROLE_USER') %}
-    <a class="btn btn-outline-kloc-header-user my-2 mr-3" href="{{ path('register_choice') }}">Inscription</a>
+        {% if 'register' in app.request.uri %}
+            <a class="btn btn-outline-kloc-indigo my-1 mr-4" href="{{ path('security_login') }}">Connexion</a>
+        {% else %}
+            <a class="btn btn-outline-kloc-header-user my-2 mr-3" href="{{ path('register_choice') }}">Inscription</a>
+        {% endif %}
     {% else %}
         <a class="btn btn-outline-kloc-header-user my-1 mr-3 px-4" href="{{ path('tenant_page', {'username' : app.user.username }) }}" data-toggle="tooltip" data-placement="bottom" title="Mon Compte" >
             <i class="far fa-user mr-2"></i>

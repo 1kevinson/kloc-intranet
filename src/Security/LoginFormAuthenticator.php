@@ -94,13 +94,13 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-       return new RedirectResponse($this->getLoginUrl());
+       return new RedirectResponse($this->router->generate('tenant_page', [
+           'username' => Request::createFromGlobals()->request->get('_username') ,
+       ]));
     }
 
     protected function getLoginUrl()
     {
-        return $this->router->generate('tenant_page', [
-            'username' => Request::createFromGlobals()->request->get('_username') ,
-        ]);
+        return $this->router->generate('security_login');
     }
 }

@@ -23,6 +23,7 @@ security:
                 check_path: security_login
                 login_path: security_login
                 csrf_token_generator: security.csrf.token_manager
+                failure_path: security_login
 
             guard:
                 authenticators:
@@ -35,7 +36,7 @@ security:
 
             logout:
                 path: security_logout
-                target: security_login
+                target: home_page
 
         # activate different ways to authenticate
         # https://symfony.com/doc/current/security.html#firewalls-authentication

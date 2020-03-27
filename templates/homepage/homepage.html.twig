@@ -32,7 +32,9 @@
 
 
                     <br>
+                    {% if not is_granted('ROLE_USER') %}
                     <a id="home-btn-login" class="btn btn-light my-1 mr-4" href="{{ path('security_login') }}">Connexion</a>
+                    {% endif %}
                 </div>
             </div>
             <div class="col-lg-5" id="embedded-apple-music">
