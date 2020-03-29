@@ -6,7 +6,9 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.1",
-    "bootstrap": "4.0.0",
+    "@types/jquery": "^3.3.34",
+    "bootstrap": "^4.4.1",
+    "croppie": "^2.6.4",
     "font-awesome": "^4.7.0",
     "holderjs": "^2.9.6",
     "jquery": "^3.4.1",

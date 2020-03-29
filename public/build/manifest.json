@@ -1,6 +1,7 @@
 {
   "build/css/app.css": "/build/css/app.css",
   "build/js/app.js": "/build/js/app.js",
+  "build/fonts/Barlow-Regular.ttf": "/build/fonts/Barlow-Regular.2cce8c80.ttf",
   "build/fonts/Raleway-Black.ttf": "/build/fonts/Raleway-Black.46818ebd.ttf",
   "build/fonts/fa-brands-400.woff2": "/build/fonts/fa-brands-400.067595ad.woff2",
   "build/fonts/fa-brands-400.eot": "/build/fonts/fa-brands-400.57dcda6f.eot",
@@ -27,5 +28,6 @@
   "build/profiles/p-black.png": "/build/profiles/p-black.png",
   "build/profiles/profile-black.png": "/build/profiles/profile-black.png",
   "build/profiles/tisme.jpg": "/build/profiles/tisme.jpg",
-  "build/fonts/Barlow-Regular.ttf": "/build/fonts/Barlow-Regular.2cce8c80.ttf"
+  "build/profiles/empty.profile.jpg": "/build/profiles/empty.profile.jpg",
+  "build/profiles/empty-profile.png": "/build/profiles/empty-profile.png"
 }

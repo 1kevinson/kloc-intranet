@@ -27,8 +27,6 @@ abstract class User implements AdvancedUserInterface, \Serializable
     const ROLE_USER = 'ROLE_USER';
     const ROLE_OWNER = 'ROLE_OWNER';
 
-    /* PATH for dev due to Webpack Encore */
-    const PROFILE_PICTURE_PATH = __DIR__."/public/build/images/";
     #endregion
 
     #region properties
@@ -71,7 +69,7 @@ abstract class User implements AdvancedUserInterface, \Serializable
     private $fullName;
 
     /**
-     * @ORM\Column(type="string",nullable=true)
+     * @ORM\Column(type="text",nullable=true)
      */
     private $profilePictureFile;
 
@@ -242,11 +240,6 @@ abstract class User implements AdvancedUserInterface, \Serializable
     public function getProfilePictureFile()
     {
         return $this->profilePictureFile;
-    }
-
-    public function getProfilePicturePath()
-    {
-        return self::PROFILE_PICTURE_PATH;
     }
 
     /**

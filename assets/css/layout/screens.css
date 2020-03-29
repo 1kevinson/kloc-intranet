@@ -1,6 +1,6 @@
 /* Use for set the page height */
 .viewport-height {
-    height: 88vh;
+    height: 92vh;
 }
 
 
@@ -169,4 +169,12 @@
     #tenant-page-left-down {
         height: 25rem;
     }
+}
+
+/* Tenant register */
+#uploaded-pic {
+    border: solid rgba(185, 180, 190, 0.8) 3px;
+    height: 13rem;
+    width: 13rem;
+    margin-top: calc(14vw + 15vh + 14vmin);
 }

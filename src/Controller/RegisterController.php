@@ -14,6 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\OptionsResolver\Exception\MissingOptionsException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
@@ -54,31 +55,23 @@ class RegisterController extends AbstractController
         $form = $this->createForm(TenantType::class, $tenant);
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid())
+        if($form->isSubmitted() )
         {
-            $password  = $passwordEncoder->encodePassword($tenant, $tenant->getPlainPassword());
-            $profilePicture = $form->get('profile_picture')->getData();
-            $randomstring = new TokenGenerator();
-
-            if(is_string($profilePicture) != 1 && $profilePicture != NULL)
-            {
-                $originalFilename = pathinfo($profilePicture->getClientOriginalName(), PATHINFO_FILENAME);
-                // this is needed to safely include the file name as part of the URL
-                $safeFilename = $randomstring->getRandomSecureToken(7);
-                $newProfileFilename = $safeFilename.'-'.uniqid().'.'.$profilePicture->guessExtension();
-
-                // Move the file to the directory where brochures are stored
-                try {
-                    $profilePicture->move(
-                        $this->getParameter('profile_pics_dir'),
-                        $newProfileFilename
-                    );
-                } catch (FileException $e) {
-                    // ... handle exception if something happens during file upload
-                    return $e->getMessage();
+            $profilePicture = '';
+            foreach ($form->all() as $child) {
+                if ($child->getName() === 'image'){
+                    $profilePicture = $child->getViewData();
+                    break;
                 }
+            }
 
-                $tenant->setProfilePictureFile($newProfileFilename);
+            $password = $passwordEncoder->encodePassword($tenant, $tenant->getPlainPassword());
+
+            if($profilePicture != NULL)
+            {
+                $tenant->setProfilePictureFile($profilePicture);
+            } else {
+                throw new \ErrorException('Le meta-data de votre photo est vide !');
             }
 
             /* SET PROPERTY VALUES */

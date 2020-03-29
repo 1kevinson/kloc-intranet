@@ -8,7 +8,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    Enregistrez votre compte
+                    Enregistrez votre compte <span class="badge badge-primary ml-2">Locataire</span>
                 </div>
                 <div class="card-body">
                     {{ form_start(form) }}
@@ -22,5 +22,39 @@
             </div>
 
         </div>
+        <div id="uploaded-pic-zone" class="offset-8 col-4">
+            <div id="uploaded-pic" class="rounded" >
+                <img id="uploaded-img" alt="Votre photo" src="">
+            </div>
+        </div>
     </div>
+
+    <div id="uploadimageModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Redimensionner l'image <i class="fas fa-camera-retro ml-2"></i></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-9 center-div-horizontally">
+                            <div id="image-crop" style="width:350px; margin-top:30px"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    <button id="validate-crop" type="button" class="btn btn-primary">Valider</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+
 {% endblock %}

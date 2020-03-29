@@ -8,6 +8,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -41,7 +42,7 @@ class TenantType extends AbstractType
            ])
            ->add('username',TextType::class,[
                'label' => 'Identifiant',
-               'help' => 'Entrez un identifiant d\'au moins 4 caractères'
+               'help'  => 'Entrez un identifiant d\'au moins 4 caractères'
            ])
            ->add('email',EmailType::class,[
                'label' => 'Adresse email'
@@ -50,7 +51,7 @@ class TenantType extends AbstractType
                'type' => PasswordType::class,
                'first_options' => [
                    'label' => 'Mot de passe',
-                   'help' => 'Entrez un mot de passe d\'au moins 8 caractères'
+                   'help'  => 'Entrez un mot de passe d\'au moins 8 caractères'
                ],
                'second_options' => [
                    'label' => 'Confirmer mot de passe'
@@ -58,13 +59,13 @@ class TenantType extends AbstractType
            ])
            ->add('profile_picture',FileType::class, [
                'label' => 'Votre Photo',
-               'attr' => array(
+               'attr'  => array(
                    'placeholder' => 'Chargez une image',
                ),
                'mapped' => false,
                'constraints' => [
                    new File([
-                       'maxSize' => '2048k',
+                       'maxSize'   => '2048k',
                        'mimeTypes' => [
                            "image/*",
                        ],
@@ -76,12 +77,16 @@ class TenantType extends AbstractType
                'empty_data' => NULL
            ])
            ->add('termsAgreed', CheckboxType::class, [
-               'mapped' => false,
-               'constraints' => new IsTrue(),
-               'label' => 'J\'accepte les conditions d\'utilisation du site',
-               'label_attr' => array(
-                   'class' => 'ml-1'
+               'mapped'         => false,
+               'constraints'    => new IsTrue(),
+               'label'          => 'J\'accepte les conditions d\'utilisation du site',
+               'label_attr'     => array(
+                   'class'      => 'ml-1'
                )
+           ])
+           ->add('image', HiddenType::class, [
+               'attr'    => ['class' => 'image-data'],
+               'mapped'  => false
            ])
            ->add('Register', SubmitType::class, [
                'label' => 'Enregistrement'

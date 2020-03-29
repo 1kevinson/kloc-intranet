@@ -26,12 +26,15 @@
     </div>
 </div>
 
-
 <!-- Computer section -->
 <div class="col-lg-4 col-md-4 d-none d-lg-block bg-light mb-1" id="tenant-page-left">
     <div class="col-lg-12 d-flex justify-content-center py-3" id="tenant-page-left-up">
         <div class="card" id="tenant-card">
-            <img class="card-img-top border-top-0" src="{{ asset('build/profiles/metiss.jpg') }}" alt="Card image cap">
+            {% if tenant.profilePictureFile is not null %}
+                <img class="card-img-top border-top-0" src="{{ tenant.profilePictureFile }}" alt="Card image cap">
+            {% else %}
+                <img class="card-img-top border-top-0" src="{{asset('build/profiles/empty-profile.png')}}" alt="Card image cap">
+            {% endif %}
             <div class="card-body">
                 <div class="tenant-card-content">
                     <p class="mt-2 text-center big-text-bold">Karianne NICOLAS</p>
