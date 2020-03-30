@@ -171,8 +171,15 @@
     }
 }
 
-/* Tenant register */
-#uploaded-pic {
+/*  register */
+#uploaded-pic-tenant {
+    border: solid rgba(185, 180, 190, 0.8) 3px;
+    height: 13rem;
+    width: 13rem;
+    margin-top: calc(14vw + 15vh + 14vmin);
+}
+
+#uploaded-pic-owner {
     border: solid rgba(185, 180, 190, 0.8) 3px;
     height: 13rem;
     width: 13rem;

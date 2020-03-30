@@ -22,7 +22,8 @@ Encore
     './node_modules/croppie/croppie.js',
     './assets/js/app.js',
     './assets/js/custom-bootstrap.js',
-    './assets/js/profile-cropper.js'
+    './assets/js/profile-cropper-owner.js',
+    './assets/js/profile-cropper-tenant.js'
     ])
     .addStyleEntry('css/app', [
         './node_modules/@fortawesome/fontawesome-free/css/all.css',

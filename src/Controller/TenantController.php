@@ -6,6 +6,8 @@ namespace App\Controller;
 
 use App\Entity\Users\Tenant;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\EntityNotFoundException;
+use phpDocumentor\Reflection\DocBlock\Tags\Throws;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -38,7 +40,7 @@ class TenantController extends AbstractController
      */
     public function tenantView(string $username)
     {
-        if($this->getUser() != null)
+        if($this->getUser() != null && $this->getUser() instanceof Tenant)
         {
             $username = $this->getUser()->getUsername();
             $tenant = $this->manager->getRepository(Tenant::class)->findOneBy(['username' => $username ]);

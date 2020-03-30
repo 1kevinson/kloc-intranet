@@ -85,7 +85,6 @@ class TenantType extends AbstractType
                )
            ])
            ->add('image', HiddenType::class, [
-               'attr'    => ['class' => 'image-data'],
                'mapped'  => false
            ])
            ->add('Register', SubmitType::class, [

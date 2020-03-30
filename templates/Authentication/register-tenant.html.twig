@@ -1,6 +1,6 @@
 {% extends 'homepage/homepage.html.twig' %}
 
-{% block title %} Inscription Locataire{% endblock %}
+{% block title %} Inscription Locataire {% endblock %}
 
 {% block body %}
     <div class="row justify-content-center viewport-height" id="register-view-tenant">
@@ -22,14 +22,14 @@
             </div>
 
         </div>
-        <div id="uploaded-pic-zone" class="offset-8 col-4">
-            <div id="uploaded-pic" class="rounded" >
-                <img id="uploaded-img" alt="Votre photo" src="">
+        <div class="offset-8 col-4">
+            <div id="uploaded-pic-tenant" class="rounded" >
+                <img id="uploaded-img-tenant" alt="Votre photo" src="">
             </div>
         </div>
     </div>
 
-    <div id="uploadimageModal" class="modal" tabindex="-1" role="dialog">
+    <div id="uploadimageModal-tenant" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -41,20 +41,16 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-9 center-div-horizontally">
-                            <div id="image-crop" style="width:350px; margin-top:30px"></div>
+                            <div id="image-crop-tenant" style="width:350px; margin-top:30px"></div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
+                    <button id="img-rotate-tenant" type="button" class="btn btn-light ">Rotate <i class="fas fa-sync ml-1"></i></button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                    <button id="validate-crop" type="button" class="btn btn-primary">Valider</button>
+                    <button id="validate-crop-tenant" type="button" class="btn btn-primary">Valider</button>
                 </div>
             </div>
         </div>
     </div>
-{% endblock %}
-
-{% block javascripts %}
-{{ parent() }}
-
 {% endblock %}

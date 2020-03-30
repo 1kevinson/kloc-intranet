@@ -3,12 +3,12 @@
 
 namespace App\Form;
 
-
 use App\Entity\Users\Owner;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -65,24 +65,27 @@ class OwnerType extends AbstractType
                 'mapped' => false,
                 'constraints' => [
                     new File([
-                                 'maxSize' => '2048k',
-                                 'mimeTypes' => [
-                                     "image/*",
-                                 ],
-                                 'mimeTypesMessage' => 'Veuillez renseigner un fichier image valide',
-                             ])
+                     'maxSize' => '2048k',
+                     'mimeTypes' => [
+                         "image/*",
+                        ],
+                     'mimeTypesMessage' => 'Veuillez renseigner un fichier image valide',
+                         ])
                 ],
                 'required' => false,
                 'help' => 'La photo ne doit pas dépasser 2 Mo',
                 'empty_data' => NULL
             ])
             ->add('termsAgreed', CheckboxType::class, [
-                'mapped' => false,
-                'constraints' => new IsTrue(),
-                'label' => 'J\'accepte les conditions d\'utilisation du site',
-                'label_attr' => array(
-                    'class' => 'ml-1'
+                'mapped'            => false,
+                'constraints'       => new IsTrue(),
+                'label'             => 'J\'accepte les conditions d\'utilisation du site',
+                'label_attr'        => array(
+                        'class' => 'ml-1'
                 )
+            ])
+            ->add('image', HiddenType::class, [
+                'mapped'  => false
             ])
             ->add('Register', SubmitType::class, [
                 'label' => 'Enregistrement'
@@ -93,8 +96,8 @@ class OwnerType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-                                   'data_class' => Owner::class
-                               ]);
+                       'data_class' => Owner::class
+                   ]);
     }
     #endregion
 
