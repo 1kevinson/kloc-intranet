@@ -40,7 +40,7 @@ class UserFixtures extends Fixture
 
     public function loadTenant(ObjectManager $manager)
     {
-        for($i =0; $i < 10 ; $i++)
+        for($i =0; $i < 5 ; $i++)
         {
             $tenant = new Tenant();
             $tenant->setUsername($this->faker->firstName);
@@ -57,7 +57,7 @@ class UserFixtures extends Fixture
 
     public function loadOwner(ObjectManager $manager)
     {
-        for($i =0; $i < 4 ; $i++)
+        for($i =0; $i < 2 ; $i++)
         {
             $owner = new Owner();
             $owner->setUsername($this->faker->firstName);

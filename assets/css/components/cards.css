@@ -26,8 +26,17 @@
     height: 13rem;
     font-size: 2rem;
     color: #5a6268;
+    cursor: pointer;
 }
 
+.tenant-card-links-lg:hover {
+    background-color: rgba(165, 96, 231, 0.16);
+}
+
+.card-icon {
+    opacity: 0.3;
+    font-size: 3rem;
+}
 
 
 .tenant-neighbors-img {

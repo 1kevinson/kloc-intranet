@@ -33,11 +33,11 @@
             {% if tenant.profilePictureFile is not null %}
                 <img class="card-img-top border-top-0" src="{{ tenant.profilePictureFile }}" alt="Card image cap">
             {% else %}
-                <img class="card-img-top border-top-0" src="{{asset('build/profiles/empty-profile.png')}}" alt="Card image cap">
+                <img class="card-img-top border-top-0" src="{{asset('build/profiles/profile-black.png')}}" alt="Card image cap" style="height: 18rem">
             {% endif %}
             <div class="card-body">
                 <div class="tenant-card-content">
-                    <p class="mt-2 text-center big-text-bold">Karianne NICOLAS</p>
+                    <p class="mt-2 text-center big-text-bold">{{ tenant.fullName|upper }}</p>
                     <hr>
                     <h3 class="regular-text"><i class="far fa-handshake mr-2"></i> Statut : <span class="badge badge-pill badge-success regular-text-low ml-2">A jour dans les paiements</span></h3>
                     <span class="regular-text"><i class="fas fa-file-signature mr-2"></i> Contrat : <span class="regular-text-low green-text">En cours</span> </span> <br>
