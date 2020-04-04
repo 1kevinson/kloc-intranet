@@ -31,7 +31,7 @@
     <div class="col-lg-12 d-flex justify-content-center py-3" id="tenant-page-left-up">
         <div class="card" id="tenant-card">
             {% if tenant.profilePictureFile is not null %}
-                <img class="card-img-top border-top-0" src="{{ tenant.profilePictureFile }}" alt="Card image cap">
+                <img class="card-img-top border-top-0" src="{{ tenant.profilePictureFile }}" alt="Card image cap" style="height: 18rem">
             {% else %}
                 <img class="card-img-top border-top-0" src="{{asset('build/profiles/profile-black.png')}}" alt="Card image cap" style="height: 18rem">
             {% endif %}
