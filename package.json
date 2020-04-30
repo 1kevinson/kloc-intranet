@@ -11,7 +11,7 @@
     "croppie": "^2.6.4",
     "font-awesome": "^4.7.0",
     "holderjs": "^2.9.6",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.16.1"
   }
 }
